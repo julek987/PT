@@ -20,25 +20,24 @@
                 num2 = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Enter option: ");
-                Console.WriteLine("a) + : Add");
-                Console.WriteLine("s) - : Substract");
-                Console.WriteLine("m) * : Multiply");
-                Console.WriteLine("d) / : Devide");
-                Console.Write("Enter a letter of option: ");
-                Console.ReadKey();
+                Console.WriteLine(" + : Add");
+                Console.WriteLine("- : Substract");
+                Console.WriteLine("* : Multiply");
+                Console.WriteLine("/ : Devide");
+                Console.Write("Enter a sign as option: ");
 
                 switch (Console.ReadLine())
                 {
-                    case "a":
+                    case "+":
                         Console.WriteLine($"Result: {num1} + {num2} = " + (num1 + num2));
                         break;
-                    case "s":
+                    case "-":
                         Console.WriteLine($"Result: {num1} - {num2} = " + (num1 - num2));
                         break;
-                    case "m":
+                    case "*":
                         Console.WriteLine($"Result: {num1} * {num2} = " + (num1 * num2));
                         break;
-                    case "d":
+                    case "/":
                         Console.WriteLine($"Result: {num1} / {num2} = " + (num1 / num2));
                         break;
                     default:
