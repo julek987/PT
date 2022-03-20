@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Calculator.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class CalculatorTests
     {
-        [TestMethod()]
+        [TestMethod]
         public void AddTest()
         {
             double x = 5;
@@ -18,7 +18,7 @@ namespace Calculator.Tests
             Assert.AreEqual(15, calculator.Add(x, y));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void SubTest()
         {
             double x = 5;
@@ -27,7 +27,7 @@ namespace Calculator.Tests
             Assert.AreEqual(-5, calculator.Sub(x, y));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void MulTest()
         {
             double x = 5;
@@ -36,7 +36,7 @@ namespace Calculator.Tests
             Assert.AreEqual(50, calculator.Mul(x, y));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void DivTest()
         {
             double x = 5;
@@ -45,7 +45,7 @@ namespace Calculator.Tests
             Assert.AreEqual(0.5, calculator.Div(x, y));
         }
 
-        [TestMethod()]
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void DivByZeroTest()
         {
