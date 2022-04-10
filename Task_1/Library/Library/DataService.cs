@@ -1,4 +1,4 @@
-﻿namespace Library
+﻿namespace Data
 {
     //TO FINISH
     public class DataService

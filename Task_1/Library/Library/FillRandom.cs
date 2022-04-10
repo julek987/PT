@@ -1,4 +1,4 @@
-﻿namespace Library
+﻿namespace Data
 {
     class FillRandom : DataFill
     {
