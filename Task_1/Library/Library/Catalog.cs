@@ -13,14 +13,14 @@
             this.number = number;
         }
 
-        public string Title { get { return title; } set => title = value; } 
+        public string Title { get { return title; } set => title = value; }
         public string Author { get { return author; } set => author = value; }
         public string Number { get { return number; } set => number = value; } //or use a INT ??
         public string All { get => number + " " + title + " " + author; }
 
         public override bool Equals(object obj)
         {
-            Catalog other = obj as Catalog; //or (Catalog)obj
+            Catalog other = (Catalog)obj; 
             return this.number == other.number;
         }
 

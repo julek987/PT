@@ -4,7 +4,7 @@
     {
         private Catalog Cata;
         private int amount;
-        private float price; //or double zamiast float
+        private float price; 
         private DateTime purchase_date;
 
         public State(Catalog cata, int amount, float price, DateTime purchase_date)
