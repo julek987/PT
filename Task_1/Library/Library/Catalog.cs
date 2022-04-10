@@ -1,28 +1,21 @@
 ﻿namespace Data
 {
-    public class Catalog
+    internal class Catalog
     {
         private string title;
         private string author;
-        private string number;
+        private string id;
 
-        public Catalog(string title, string author, string number)
+        public Catalog(string id, string title, string author)
         {
             this.title = title;
             this.author = author;
-            this.number = number;
+            this.id = id;
         }
 
-        public string Title { get { return title; } set => title = value; }
-        public string Author { get { return author; } set => author = value; }
-        public string Number { get { return number; } set => number = value; } //or use a INT ??
-        public string All { get => number + " " + title + " " + author; }
-
-        public override bool Equals(object obj)
-        {
-            Catalog other = (Catalog)obj; 
-            return this.number == other.number;
-        }
+        internal string Title { get => title; set => title = value; }
+        internal string Author { get => author; set => author = value; }
+        internal string ID { get => id; set => id = value; } 
 
 
     }

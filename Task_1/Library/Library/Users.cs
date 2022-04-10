@@ -1,27 +1,21 @@
 ﻿namespace Data
 {
-    public class Users
+    internal class Users
     {
         private string firstName;
         private string lastName;
-        private string id; //moze jednak int??
+        private string id; 
 
-        public Users(string firstName, string lastName, string id)
+        internal Users(string id, string firstName, string lastName)
         {
+            this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;   
-            this.id = id;
         }
 
-        public string FirstName { get { return firstName; } set => firstName = value;}
-        public string LastName { get { return lastName; } set => lastName = value;}
-        public string Id { get { return id; } set => id = value;}
-        public string All { get => id + " " +  firstName + " " + lastName; }
+        internal string FirstName { get => firstName; set => firstName = value; }
+        internal string LastName { get => lastName; set => lastName = value;}
+        internal string Id { get => id;  set => id = value;}
 
-        public override bool Equals(object obj)
-        {
-            Users other = obj as Users; //can be different 
-            return this.Id == other.Id;
-        }
     }
 }

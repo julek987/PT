@@ -1,34 +1,17 @@
 ﻿namespace Data
 {
-    public class Event
+    internal class Event
     {
-        private Users U;
-        private State S;
-        private DateTime purchase_date;
+        protected State state;
+        protected Users user;
+        internal string BookID => state.BookId;
+        internal string UserID => user.Id;
 
-        public Event(Users u, State s, DateTime purchase_date)
+        internal Event(Users user, State state)
         {
-            U = u;
-            S = s;
-            Purchase_date = purchase_date;
+            this.user = user;
+            this.state = state;
         }
-
-        public Users u { get { return U; } set => U = value;}
-        public State s { get { return S; } set => S = value;}
-        public DateTime Purchase_date { get { return purchase_date; } set => purchase_date = value;}
-        public string All
-        {
-            get { return this.U.All + " " + this.S.All + " " + Purchase_date; }
-
-        }
-        public override bool Equals(object obj)
-        {
-            if (obj is Event)
-            {
-                Event other = obj as Event;
-                return this.U.Equals(other.U) && this.purchase_date == other.purchase_date;
-            }
-            return base.Equals(obj);
-        }
+      
     }
 }
