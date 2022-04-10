@@ -4,7 +4,7 @@
     {
         private Users U;
         private State S;
-        private DateTime Purchase_Date;
+        private DateTime purchase_date;
 
         public Event(Users u, State s, DateTime purchase_date)
         {
@@ -13,17 +13,20 @@
             Purchase_date = purchase_date;
         }
 
-        public Users u { get { return U}, set => U = value;}
-        public State s { get { return S}, set => S = value;}
-        public DateTime Purchase_date { get { return Purchase_Date}, set => Purchase_Date = value;}
-        public string Final { get { return this.U.Final + " " + this.S.Final + " " + Purchase_date;}
+        public Users u { get { return U; } set => U = value;}
+        public State s { get { return S; } set => S = value;}
+        public DateTime Purchase_date { get { return purchase_date; } set => purchase_date = value;}
+        public string All
+        {
+            get { return this.U.All + " " + this.S.All + " " + Purchase_date; }
 
+        }
         public override bool Equals(object obj)
         {
             if (obj is Event)
             {
                 Event other = obj as Event;
-                return this.U.Equals(other.U) && this.Purchase_Date == other.Purchase_Date;
+                return this.U.Equals(other.U) && this.purchase_date == other.purchase_date;
             }
             return base.Equals(obj);
         }

@@ -12,11 +12,10 @@
             this.author = author;
             this.number = number;
         }
-        //QUESTION
-        //return or get set?? for example: public string Title { get => title; set => title = value; }
-        public string Title { get { return title; } } 
-        public string Author { get { return author; } }
-        public string Number { get { return number; } } //or use a INT ??
+
+        public string Title { get { return title; } set => title = value; } 
+        public string Author { get { return author; } set => author = value; }
+        public string Number { get { return number; } set => number = value; } //or use a INT ??
         public string All { get => number + " " + title + " " + author; }
 
         public override bool Equals(object obj)
