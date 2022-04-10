@@ -1,6 +1,7 @@
 ﻿namespace Library
 {
-    internal class DataFill
+    public interface DataFill
     {
+        void Fill(DataContext datacontext);
     }
 }

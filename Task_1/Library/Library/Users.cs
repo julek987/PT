@@ -20,7 +20,7 @@
 
         public override bool Equals(object obj)
         {
-            Users other = obj as Users;
+            Users other = obj as Users; //can be different 
             return this.Id == other.Id;
         }
     }

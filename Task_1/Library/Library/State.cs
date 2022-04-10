@@ -1,5 +1,6 @@
 ﻿namespace Library
 {
+    //TO FINISH
     public class State
     {
         private Catalog Cata;
