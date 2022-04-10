@@ -1,7 +1,6 @@
 ﻿namespace Library
 {
-    public class Event
+    internal class DataFill
     {
-
     }
 }
