@@ -1,10 +1,11 @@
 ﻿namespace Data
 {
-    public class FillConstValues : DataFill
+    //DO WE NEED IT?
+    internal class FillConstValues : DataFill
     {
-        public FillConstValues() { }
+        internal FillConstValues() { }
 
-        public void Fill(DataContext dataContext)
+        internal void Fill(DataContext dataContext)
         {
             // Users fill
             dataContext.users.Add(new Users("Tom", "Hanks", "0"));

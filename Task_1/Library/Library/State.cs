@@ -1,5 +1,6 @@
 ﻿namespace Data
 {
+    //OK
     internal class State
     {
         protected Catalog catalog;

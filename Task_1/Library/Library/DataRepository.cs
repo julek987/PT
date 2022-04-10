@@ -1,6 +1,7 @@
 ﻿namespace Data
 {
     //TO FINISH
+    //initialiser why??
     public class DataRepository
     {
         private DataContext dataContext;

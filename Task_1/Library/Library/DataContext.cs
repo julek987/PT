@@ -1,5 +1,6 @@
 ﻿namespace Data
 {
+    //TO IMPLEMENT
     internal class DataContext
     {
         private List<Users> users = new List<Users> ();
@@ -15,23 +16,44 @@
             this.events = events;
         }
 
-        internal void AddBook(string id, string title, string author,string amount, float price)
+        //Users
+        internal void AddUser(string id, string firstName, string lastName)
+        {
+            users.Add(new Users(id, firstName, lastName));
+        }
+        internal void GetUser()
+        {
+
+        }
+        internal void UserAlreadyExist()
+        {
+
+        }
+        internal void DeleteUser()
+        {
+
+        }
+        //Catalog
+        internal void AddBook(string id, string title, string author, string amount, float price)
         {
             Catalog catalog = new Catalog(id, title, author);
             State state = new State(amount, price);
             //catalogs.Add(new Catalog(id,title, author);
             //states.Add(amount, price);
-            states.Add(catalog);
+            //states.Add(catalog);
         }
-
-        internal void AddUser(string id, string firstName, string lastName)
+        internal void GetBook(string id)
         {
-            users.Add(new Users(id, firstName, lastName));
+
         }
+        internal void BookAlreadyExists(string id)
+        {
 
+        }
+        internal void DeleteBook(string id)
+        {
 
-
-
+        }
 
     }
 }
