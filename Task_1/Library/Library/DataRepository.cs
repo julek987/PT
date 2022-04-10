@@ -40,7 +40,7 @@
         {
             foreach (var e in dataContext.events)
             {
-                if (e.U == U) throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
+                if (e.u == U) throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
             }
             dataContext.users.Remove(U);
         }
@@ -55,11 +55,9 @@
             }
             dataContext.users.Remove(tmp);
         }
-    }
+        private int CatalogCounter=0;
 
-    private int CatalogCounter=0;
-
-        public int CatalogCounter1 { get {return CatalogCounter}; set => CatalogCounter = value; }
+        public int CatalogCounter1 { get { return CatalogCounter; } set => CatalogCounter = value; }
 
         public void AddCatalog(Catalog C)
         {
@@ -81,7 +79,7 @@
         {
             foreach (var O in dataContext.states)
             {
-                if (O.C1.Equals(dataContext.catalogs[id])) throw new Exception("Cannot remove object. Is in use by State");
+                if (O.Cata2.Equals(dataContext.catalogs[id])) throw new Exception("Cannot remove object. Is in use by State");
             }
             dataContext.catalogs.Remove(id);
         }
@@ -90,7 +88,7 @@
         {
             foreach (var O in dataContext.states)
             {
-                if (O.C1 == C) throw new Exception("Cannot remove object. Is in use by State");
+                if (O.Cata2 == C) throw new Exception("Cannot remove object. Is in use by State");
             }
 
             for (int id = 0; id < dataContext.catalogs.Count; id++)
@@ -103,7 +101,7 @@
             }
         }
 
-    public void AddEvent(Event E)
+        public void AddEvent(Event E)
         {
             dataContext.events.Add(E);
         }
@@ -134,10 +132,10 @@
         public void DeleteEvent(int _id)
         {
             if (_id >= dataContext.events.Count()) throw new Exception("There is no such event");
-            dtaContext.events.Remove(dataContext.events[_id]);
+            dataContext.events.Remove(dataContext.events[_id]);
         }
 
-    public void AddState(State S)
+        public void AddState(State S)
         {
             dataContext.states.Add(S);
         }
@@ -176,4 +174,7 @@
             }
             dataContext.states.Remove(S);
         }
+    }
+
+    
 }
