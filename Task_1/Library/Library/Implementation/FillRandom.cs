@@ -1,28 +1,25 @@
-﻿namespace Data
+﻿namespace Data;
+
+//DO WE NEED IT?
+internal class FillRandom : DataFill
 {
-    //DO WE NEED IT?
-    class FillRandom : DataFill
+    public static int SIZE = 20;
+
+    private static readonly Random random = new();
+
+    public void Fill(DataContext dataContext)
     {
-        public FillRandom() { }
-
-        public static int SIZE = 20;
-
-        private static Random random = new Random();
-        public static string RandomString(int length)
+        for (var i = 0; i < SIZE; i++)
         {
-            const string str = "I LOVE PROGRAMMING";
-            return new string(Enumerable.Repeat(str, length).Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        public void Fill(DataContext dataContext)
-        {
-            for (int i = 0; i < SIZE; i++)
-            {
-                //dataContext.users.Add(new Users(RandomString(),"Kowalski", "1"));
-                Console.Write(random);
-                Console.Write("hi");
-            }
+            //dataContext.users.Add(new Users(RandomString(),"Kowalski", "1"));
+            Console.Write(random);
+            Console.Write("hi");
         }
     }
 
+    public static string RandomString(int length)
+    {
+        const string str = "I LOVE PROGRAMMING";
+        return new string(Enumerable.Repeat(str, length).Select(s => s[random.Next(s.Length)]).ToArray());
+    }
 }

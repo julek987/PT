@@ -1,9 +1,8 @@
 ﻿//using Data;
 
-namespace Logic
+namespace Logic;
+
+//TO IMPLEMENT
+internal class AbstractLogicAPI
 {
-    //TO IMPLEMENT
-    internal class AbstractLogicAPI
-    {
-    }
 }

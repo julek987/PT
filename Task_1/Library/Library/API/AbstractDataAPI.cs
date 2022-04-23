@@ -1,7 +1,6 @@
-﻿namespace Data
+﻿namespace Data;
+
+//TO IMPLEMENT
+public abstract class AbstractDataAPI
 {
-    //TO IMPLEMENT
-    public abstract class AbstractDataAPI
-    {
-    }
 }

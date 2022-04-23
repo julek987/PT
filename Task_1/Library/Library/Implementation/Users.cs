@@ -1,22 +1,18 @@
-﻿namespace Data
+﻿namespace Data;
+
+//OK
+internal class Users : IUsers
 {
-    //OK
-    internal class Users : IUsers
+    public Users(string id, string firstName, string lastName)
     {
-        private string firstName;
-        private string lastName;
-        private string id; 
-
-        public Users(string id, string firstName, string lastName)
-        {
-            this.id = id;
-            this.firstName = firstName;
-            this.lastName = lastName;   
-        }
-
-        public string FirstName { get => firstName; set => firstName = value; }
-        public string LastName { get => lastName; set => lastName = value;}
-        public string Id { get => id;  set => id = value;}
-
+        this.Id = id;
+        this.FirstName = firstName;
+        this.LastName = lastName;
     }
+
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
+
+    public string Id { get; set; }
 }

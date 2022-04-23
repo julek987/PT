@@ -1,8 +1,7 @@
-﻿namespace Data
+﻿namespace Data;
+
+//DO WE NEED IT?
+internal interface DataFill
 {
-    //DO WE NEED IT?
-    internal interface DataFill
-    {
-        void Fill(DataContext datacontext);
-    }
+    void Fill(DataContext datacontext);
 }

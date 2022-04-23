@@ -4,5 +4,4 @@ namespace Logic;
 
 public class DataService
 {
-
 }
