@@ -20,4 +20,9 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Library\Data.csproj" />
+      <ProjectReference Include="..\Logic\Logic.csproj" />
+    </ItemGroup>
+
 </Project>

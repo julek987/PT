@@ -1,7 +1,9 @@
-﻿namespace Data
+﻿using Data.API;
+
+namespace Data
 {
     //OK
-    internal class Catalog
+    internal class Catalog : ICatalog
     {
         private string title;
         private string author;
@@ -14,9 +16,9 @@
             this.id = id;
         }
 
-        internal string Title { get => title; set => title = value; }
-        internal string Author { get => author; set => author = value; }
-        internal string ID { get => id; set => id = value; } 
+        public string Title { get => title; set => title = value; }
+        public string Author { get => author; set => author = value; }
+        public string Id { get => id; set => id = value; } 
 
 
     }

@@ -5,7 +5,7 @@
     {
         internal FillConstValues() { }
 
-        internal void Fill(DataContext dataContext)
+        public void Fill(DataContext dataContext)
         {
             // Users fill
             dataContext.users.Add(new Users("Tom", "Hanks", "0"));
@@ -15,14 +15,14 @@
             dataContext.users.Add(new Users("Jack", "Nicholson", "4"));
 
             // Catalog fill
-            dataContext.catalogs.Add(0, new Catalog("Le Petit Prince", "Antoine de Saint-Exupéry","0"));
-            dataContext.catalogs.Add(1, new Catalog("From Blood and Ash", "Jennifer L. Armentrout", "1"));
-            dataContext.catalogs.Add(2, new Catalog("The Great Gatsby", "F. Scott Fitzgerald", "2"));
-            dataContext.catalogs.Add(3, new Catalog("Pride and Prejudice", "Jane Austen", "3"));
-            dataContext.catalogs.Add(4, new Catalog("Anna Karenina", "Leo Tolstoy", "4"));
+            dataContext.catalogs.Add("0", new Catalog("Le Petit Prince", "Antoine de Saint-Exupéry","0"));
+            dataContext.catalogs.Add("1", new Catalog("From Blood and Ash", "Jennifer L. Armentrout", "1"));
+            dataContext.catalogs.Add("2", new Catalog("The Great Gatsby", "F. Scott Fitzgerald", "2"));
+            dataContext.catalogs.Add("3", new Catalog("Pride and Prejudice", "Jane Austen", "3"));
+            dataContext.catalogs.Add("4", new Catalog("Anna Karenina", "Leo Tolstoy", "4"));
 
             // State fill
-            for(int i=0; i<5; i++)
+            for(int i=0; i<5; i++)                                
             {
                 dataContext.states.Add(new State(dataContext.catalogs[i], i + 5, 5 * i, DateTime.Today));
             }

@@ -1,7 +1,7 @@
 ﻿namespace Data
 {
     //TO IMPLEMENT
-    internal class AbstractDataAPI
+    public abstract class AbstractDataAPI
     {
     }
 }
