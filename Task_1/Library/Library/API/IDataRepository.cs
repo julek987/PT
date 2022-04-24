@@ -11,6 +11,7 @@ public abstract class IDataRepository
 
     public abstract void DeleteUser(IUsers u); //if we have a user. 
     public abstract void DeleteUserWithId(string id);
+    public abstract bool UserExists(string id);
 
 
     public abstract void AddCatalog(ICatalog c);
@@ -18,19 +19,21 @@ public abstract class IDataRepository
     public abstract IEnumerable<ICatalog> GetAllCatalogs();
     public abstract void DeleteCatalogWithId(string id);
     public abstract void DeleteCatalog(ICatalog c); // If we have a catalog.
-
+    public abstract bool CatalogExists(string id);
 
     public abstract void AddEvent(IEvent e);
     public abstract IEvent GetEvent(string id);
     public abstract IEnumerable<IEvent> GetAllEvents();
     public abstract void DeleteEvent(IEvent e);
     public abstract void DeleteEvent(int id);
+    public abstract bool EventExists(string id);
 
     public abstract void AddState(IState s);
     public abstract IState GetState(string id);
     public abstract IEnumerable<IState> GetAllStates();
     public abstract void DeleteState(IState s); // If we have a state
     public abstract void DeleteStateWithId(string id);
+    public abstract bool StateExists(string id);
 
     public static IDataRepository CreateDataRepository()
     {

@@ -1,4 +1,4 @@
-﻿namespace Data.Implementation;
+﻿/*namespace Data.Implementation;
 
 //DO WE NEED IT?
 internal class FillConstValues : DataFill
@@ -33,4 +33,4 @@ internal class FillConstValues : DataFill
         dataContext.events.Add(new Event(dataContext.users[2], dataContext.states[3], DateTime.Today));
         dataContext.events.Add(new Event(dataContext.users[3], dataContext.states[3], DateTime.Today));
     }
-}
+}*/

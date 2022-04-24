@@ -1,5 +1,4 @@
 ﻿using Data.API;
-
 namespace Data.Implementation;
 
 //OK

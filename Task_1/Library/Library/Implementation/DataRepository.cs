@@ -1,4 +1,6 @@
 ﻿using Data.API;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Data.Implementation;
 internal class DataRepository : IDataRepository
@@ -48,6 +50,15 @@ internal class DataRepository : IDataRepository
         dataContext.users.Remove(dataContext.users.Single(u => u.Id == id));
     }
 
+    public override bool UserExists(string id)
+    {
+        foreach (var user in dataContext.users)
+        {
+            if (user.Id == id) return true;
+        }
+        return false;
+    }
+
     public override void AddCatalog(ICatalog c)
     {
         dataContext.catalogs.Add(c.Id, c);
@@ -78,6 +89,11 @@ internal class DataRepository : IDataRepository
                 throw new Exception("Cannot remove object. Is in use by State");
 
         dataContext.catalogs.Remove(c.Id);
+    }
+
+    public override bool CatalogExists(string id)
+    {
+        return dataContext.catalogs.ContainsKey(id);
     }
 
     public override void AddEvent(IEvent e)
@@ -113,6 +129,15 @@ internal class DataRepository : IDataRepository
         dataContext.events.Remove(dataContext.events[id]);
     }
 
+    public override bool EventExists(string id)
+    {
+        foreach (var e in dataContext.events)
+        {
+            if (e.EventId == id) return true;
+        }
+        return false;
+    }
+
     public override void AddState(IState s)
     {
         dataContext.states.Add(s);
@@ -142,5 +167,14 @@ internal class DataRepository : IDataRepository
             if (e.StateId == id)
                 throw new Exception("State is in use");
         dataContext.states.Remove(dataContext.states.Single(s => s.Stateid == id));
+    }
+
+    public override bool StateExists(string id)
+    {
+        foreach (var state in dataContext.states)
+        {
+            if (state.Stateid == id) return true;
+        }
+        return false;
     }
 }
