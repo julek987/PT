@@ -1,7 +1,8 @@
-﻿namespace Data;
+﻿namespace Data.API;
 
 public interface IState
 {
     string BookId { get; }
-    string Stateid { get; set; }
+    string StateId { get; set; }
+    bool Available { get; set; }
 }

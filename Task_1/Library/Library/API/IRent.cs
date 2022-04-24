@@ -1,6 +1,6 @@
 ﻿namespace Data.API;
 
-public interface IEvent
+public interface IRent : IEvent
 {
     string StateId { get; }
     string UserId { get; }

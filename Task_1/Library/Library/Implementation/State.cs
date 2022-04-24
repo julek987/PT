@@ -7,12 +7,14 @@ internal class State : IState
 {
     private readonly ICatalog catalog;
 
-    public State(string stateid, ICatalog catalog)
+    public State(string stateId, ICatalog catalog)
     {
-        Stateid = stateid;
+        StateId = stateId;
         this.catalog = catalog;
     }
 
     public string BookId => catalog.Id;
-    public string Stateid { get; set; }
+    public string StateId { get; set; }
+    
+    public bool Available { get; set; }
 }

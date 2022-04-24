@@ -1,13 +1,16 @@
-﻿/*namespace Data.Implementation;
+﻿using System;
+using Data.API;
+
+namespace Data.Implementation;
 
 //DO WE NEED IT?
-internal class FillConstValues : DataFill
+internal class FillConstValues : IFill
 {
-    public void Fill(DataContext dataContext)
+    public void Fill(IDataContext dataContext)
     {
         // Users fill
-        dataContext.users.Add(new Users("Tom", "Hanks", "0"));
-        dataContext.users.Add(new Users("Denzel", "Washington", "1"));
+        dataContext.AddUser(new Users("Tom", "Hanks", "0"));
+        dataContext.AddUser(new Users("Denzel", "Washington", "1"));
         dataContext.users.Add(new Users("Morgan", "Freeman", "2"));
         dataContext.users.Add(new Users("Harrison", "Ford", "3"));
         dataContext.users.Add(new Users("Jack", "Nicholson", "4"));
@@ -21,7 +24,7 @@ internal class FillConstValues : DataFill
 
         // State fill
         for (var i = 0; i < 5; i++)
-            dataContext.states.Add(new State(dataContext.catalogs[i], i + 5, 5 * i, DateTime.Today));
+            dataContext.AddState(new State(dataContext.catalogs[i], i + 5, 5 * i, DateTime.Today));
 
         // Events fill
         for (var i = 0; i < 5; i++)
@@ -33,4 +36,4 @@ internal class FillConstValues : DataFill
         dataContext.events.Add(new Event(dataContext.users[2], dataContext.states[3], DateTime.Today));
         dataContext.events.Add(new Event(dataContext.users[3], dataContext.states[3], DateTime.Today));
     }
-}*/
+}

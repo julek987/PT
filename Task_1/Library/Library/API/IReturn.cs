@@ -1,6 +1,6 @@
 ﻿namespace Data.API;
 
-public interface IEvent
+public interface IReturn : IEvent
 {
     string StateId { get; }
     string UserId { get; }

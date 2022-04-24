@@ -1,10 +1,10 @@
-﻿using Data.Implementation;
-
+﻿using System.Runtime.CompilerServices;
+using Data.Implementation;
+[assembly:InternalsVisibleTo("Tests")]
 namespace Data.API;
 
 public abstract class IDataRepository
 {
-    public abstract void FillStatic();
     public abstract void AddUser(IUsers u);
     public abstract IUsers GetUser(string id);
     public abstract IEnumerable<IUsers> GetAllUsers();
@@ -22,11 +22,9 @@ public abstract class IDataRepository
     public abstract bool CatalogExists(string id);
 
     public abstract void AddEvent(IEvent e);
-    public abstract IEvent GetEvent(string id);
     public abstract IEnumerable<IEvent> GetAllEvents();
     public abstract void DeleteEvent(IEvent e);
     public abstract void DeleteEvent(int id);
-    public abstract bool EventExists(string id);
 
     public abstract void AddState(IState s);
     public abstract IState GetState(string id);
@@ -35,8 +33,8 @@ public abstract class IDataRepository
     public abstract void DeleteStateWithId(string id);
     public abstract bool StateExists(string id);
 
-    public static IDataRepository CreateDataRepository()
+    public static IDataRepository CreateDataRepository(IFill? fill = default)
     {
-        return new DataRepository();
+        return new DataRepository(fill ?? new EmptyFill());
     }
 }

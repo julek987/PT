@@ -6,16 +6,10 @@ namespace Data.Implementation;
 internal class DataRepository : IDataRepository
 {
     private readonly DataContext dataContext;
-    private readonly DataFill dataFill;
 
-    public DataRepository(DataContext dataContext, DataFill dataFill)
+    public DataRepository(IFill dataFill)
     {
-        this.dataContext = dataContext;
-        this.dataFill = dataFill;
-    }
-
-    public override void FillStatic()
-    {
+        dataContext = new DataContext();
         dataFill.Fill(dataContext);
     }
 
@@ -36,16 +30,30 @@ internal class DataRepository : IDataRepository
 
     public override void DeleteUser(IUsers u) //if we have a user. 
     {
-        foreach (var e in dataContext.events)
+        int RentCount = 0;
+        int ReturnCount = 0;
+        foreach (var e in dataContext.events.OfType<IRent>())
             if (e.UserId == u.Id)
+                RentCount++;
+        foreach (var e in dataContext.events.OfType<IReturn>())
+            if (e.UserId == u.Id)
+                ReturnCount++;
+        if(RentCount!=ReturnCount)
                 throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
         dataContext.users.Remove(u);
     }
 
     public override void DeleteUserWithId(string id)
     {
-        foreach (var e in dataContext.events)
+        int RentCount = 0;
+        int ReturnCount = 0;
+        foreach (var e in dataContext.events.OfType<IRent>())
             if (e.UserId == id)
+                RentCount++;
+        foreach (var e in dataContext.events.OfType<IReturn>())
+            if (e.UserId == id)
+                ReturnCount++;
+        if(RentCount!=ReturnCount)
                 throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
         dataContext.users.Remove(dataContext.users.Single(u => u.Id == id));
     }
@@ -101,11 +109,6 @@ internal class DataRepository : IDataRepository
         dataContext.events.Add(e);
     }
 
-    public override IEvent GetEvent(string id)
-    {
-        return dataContext.events.Single(e => e.EventId == id);
-    }
-
     public override IEnumerable<IEvent> GetAllEvents()
     {
         return dataContext.events;
@@ -129,15 +132,6 @@ internal class DataRepository : IDataRepository
         dataContext.events.Remove(dataContext.events[id]);
     }
 
-    public override bool EventExists(string id)
-    {
-        foreach (var e in dataContext.events)
-        {
-            if (e.EventId == id) return true;
-        }
-        return false;
-    }
-
     public override void AddState(IState s)
     {
         dataContext.states.Add(s);
@@ -145,7 +139,7 @@ internal class DataRepository : IDataRepository
 
     public override IState GetState(string id)
     {
-        return dataContext.states.Single(s => s.Stateid == id);
+        return dataContext.states.Single(s => s.StateId == id);
     }
 
     public override IEnumerable<IState> GetAllStates()
@@ -156,7 +150,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteState(IState s) // If we have a state
     {
         foreach (var e in dataContext.events)
-            if (e.StateId == s.Stateid)
+            if (e.StateId == s.StateId)
                 throw new Exception("State is in use");
         dataContext.states.Remove(s);
     }
@@ -166,14 +160,14 @@ internal class DataRepository : IDataRepository
         foreach (var e in dataContext.events)
             if (e.StateId == id)
                 throw new Exception("State is in use");
-        dataContext.states.Remove(dataContext.states.Single(s => s.Stateid == id));
+        dataContext.states.Remove(dataContext.states.Single(s => s.StateId == id));
     }
 
     public override bool StateExists(string id)
     {
         foreach (var state in dataContext.states)
         {
-            if (state.Stateid == id) return true;
+            if (state.StateId == id) return true;
         }
         return false;
     }

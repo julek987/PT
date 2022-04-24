@@ -1,13 +1,15 @@
-﻿namespace Data.Implementation;
+﻿using Data.API;
+
+namespace Data.Implementation;
 
 //DO WE NEED IT?
-internal class FillRandom : DataFill
+internal class FillRandom : IFill
 {
     public static int SIZE = 20;
 
     private static readonly Random random = new();
 
-    public void Fill(DataContext dataContext)
+    public override void Fill(IDataContext dataContext)
     {
         for (var i = 0; i < SIZE; i++)
         {
