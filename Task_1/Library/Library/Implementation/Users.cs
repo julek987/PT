@@ -1,6 +1,5 @@
 ﻿namespace Data.Implementation;
 
-//OK
 internal class Users : IUsers
 {
     public Users(string id, string firstName, string lastName)

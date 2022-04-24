@@ -2,7 +2,6 @@
 
 namespace Data.Implementation;
 
-//OK
 internal class State : IState
 {
     private readonly ICatalog catalog;

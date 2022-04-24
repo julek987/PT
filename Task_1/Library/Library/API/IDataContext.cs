@@ -1,5 +1,4 @@
 ﻿namespace Data.API;
-
 public abstract class IDataContext
 {
     public abstract void AddUser(IUsers user);

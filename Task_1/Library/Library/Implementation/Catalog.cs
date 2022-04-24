@@ -1,7 +1,6 @@
 ﻿using Data.API;
 namespace Data.Implementation;
 
-//OK
 internal class Catalog : ICatalog
 {
     public Catalog(string id, string title, string author)

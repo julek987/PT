@@ -3,7 +3,6 @@ using Data.Implementation;
 
 namespace Data.Implementation;
 
-//TO IMPLEMENT
 internal class DataContext : IDataContext
 {
     internal Dictionary<string, ICatalog> catalogs = new();
