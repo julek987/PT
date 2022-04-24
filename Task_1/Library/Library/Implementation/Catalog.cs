@@ -1,15 +1,15 @@
 ﻿using Data.API;
 
-namespace Data;
+namespace Data.Implementation;
 
 //OK
 internal class Catalog : ICatalog
 {
     public Catalog(string id, string title, string author)
     {
-        this.Title = title;
-        this.Author = author;
-        this.Id = id;
+        Title = title;
+        Author = author;
+        Id = id;
     }
 
     public string Title { get; set; }

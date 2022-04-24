@@ -1,4 +1,4 @@
-﻿namespace Data;
+﻿namespace Data.Implementation;
 
 //DO WE NEED IT?
 internal class FillRandom : DataFill

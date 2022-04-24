@@ -1,4 +1,4 @@
-﻿namespace Data;
+﻿namespace Data.Implementation;
 
 //OK
 internal class Event : IEvent
@@ -12,8 +12,8 @@ internal class Event : IEvent
         this.state = state;
     }
 
-    public string StateID => state.Stateid;
-    public string UserID => user.Id;
+    public string StateId => state.Stateid;
+    public string UserId => user.Id;
 
-    public string EventID { get; set; }
+    public string EventId { get; set; }
 }

@@ -2,7 +2,7 @@
 
 public interface IEvent
 {
-    string StateID { get; }
-    string UserID { get; }
-    string EventID { get; set; }
+    string StateId { get; }
+    string UserId { get; }
+    string EventId { get; set; }
 }

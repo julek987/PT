@@ -1,6 +1,7 @@
 ﻿using Data.API;
+using Data.Implementation;
 
-namespace Data;
+namespace Data.Implementation;
 
 //TO IMPLEMENT
 internal class DataContext

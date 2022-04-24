@@ -1,9 +1,6 @@
 ﻿using Data.API;
 
 namespace Data.Implementation;
-
-//TO FINISH
-//initialiser why??
 internal class DataRepository : IDataRepository
 {
     private readonly DataContext dataContext;
@@ -38,7 +35,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteUser(IUsers u) //if we have a user. 
     {
         foreach (var e in dataContext.events)
-            if (e.UserID == u.Id)
+            if (e.UserId == u.Id)
                 throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
         dataContext.users.Remove(u);
     }
@@ -46,7 +43,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteUserWithId(string id)
     {
         foreach (var e in dataContext.events)
-            if (e.UserID == id)
+            if (e.UserId == id)
                 throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
         dataContext.users.Remove(dataContext.users.Single(u => u.Id == id));
     }
@@ -90,7 +87,7 @@ internal class DataRepository : IDataRepository
 
     public override IEvent GetEvent(string id)
     {
-        return dataContext.events.Single(e => e.EventID == id);
+        return dataContext.events.Single(e => e.EventId == id);
     }
 
     public override IEnumerable<IEvent> GetAllEvents()
@@ -134,7 +131,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteState(IState s) // If we have a state
     {
         foreach (var e in dataContext.events)
-            if (e.StateID == s.Stateid)
+            if (e.StateId == s.Stateid)
                 throw new Exception("State is in use");
         dataContext.states.Remove(s);
     }
@@ -142,7 +139,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteStateWithId(string id)
     {
         foreach (var e in dataContext.events)
-            if (e.StateID == id)
+            if (e.StateId == id)
                 throw new Exception("State is in use");
         dataContext.states.Remove(dataContext.states.Single(s => s.Stateid == id));
     }

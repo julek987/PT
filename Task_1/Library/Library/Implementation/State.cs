@@ -1,6 +1,6 @@
 ﻿using Data.API;
 
-namespace Data;
+namespace Data.Implementation;
 
 //OK
 internal class State : IState
