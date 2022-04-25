@@ -31,6 +31,8 @@ public abstract class IDataRepository
     public abstract void DeleteState(IState s); // If we have a state
     public abstract void DeleteStateWithId(string id);
     public abstract bool StateExists(string id);
+    public abstract bool IsAvailable(string id);
+    public abstract void ChangeAvailability(string id);
 
     public static IDataRepository CreateDataRepository(IFill? fill = default)
     {

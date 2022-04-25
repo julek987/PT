@@ -2,8 +2,9 @@
 using Data;
 using Data.API;
 using Data.Implementation;
+using Logic.Implementation;
 using Xunit;
-namespace Data.Tests;
+namespace TestProject1;
 
 public class TestCatalog : ICatalog
 {

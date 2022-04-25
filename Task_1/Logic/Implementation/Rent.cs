@@ -1,6 +1,6 @@
 ﻿using Data.API;
 
-namespace Data.Implementation;
+namespace Logic.Implementation;
 
 internal class Rent : IRent
 {

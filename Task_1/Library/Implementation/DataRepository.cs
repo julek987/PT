@@ -10,7 +10,7 @@ internal class DataRepository : IDataRepository
     public DataRepository(IFill dataFill)
     {
         dataContext = new DataContext();
-        dataFill.Fill(dataContext);
+        dataFill.Fill(this);
     }
 
     public override void AddUser(IUsers u)
@@ -163,5 +163,34 @@ internal class DataRepository : IDataRepository
             if (state.StateId == id) return true;
         }
         return false;
+    }
+
+    public override bool IsAvailable(string id)
+    {
+        foreach (var s in dataContext.states)
+        {
+            if (s.StateId == id)
+            {
+                if (s.Available) return true;
+            }
+        }
+        return false;
+    }
+
+    public override void ChangeAvailability(string id)
+    {
+        foreach (var s in dataContext.states)
+        {
+            if (s.StateId == id)
+            {
+                if (s.Available)
+                {
+                    s.Available = false;
+                    break;
+                }
+                if(!s.Available) s.Available = true;
+                break;
+            }
+        }
     }
 }

@@ -6,16 +6,24 @@ namespace Logic.Implementation;
 
 internal class BusinessLogic : IBusinessLogic
 {
-    private readonly IDataRepository _data;
+    private IDataRepository DataRepo;
+
+    public BusinessLogic(IDataRepository dataRepo)
+    {
+        DataRepo = dataRepo;
+    }
 
     public override void BorrowBook(string userId, string stateId)
     {
-        if(stateId == null) throw new InvalidOperationException("Can't rent a book that isn't available");
-        _data.AddEvent(new Rent(userId, stateId));
+        if(!DataRepo.IsAvailable(stateId)) throw new InvalidOperationException("Can't rent a book that isn't available");
+        IRent rent = new Rent(stateId, userId);
+        DataRepo.AddEvent(rent);
+        DataRepo.ChangeAvailability(stateId);
     }
 
     public override void ReturnBook(string userId, string stateId)
-    {   if (stateId == null) throw new InvalidOperationException("Can't return book that wasn't rent");
-        _data.AddEvent(new Return(userId, stateId));
+    {   if (DataRepo.IsAvailable(stateId)) throw new InvalidOperationException("Can't return book that wasn't rent");
+        DataRepo.AddEvent(new Return(stateId, userId));
+        DataRepo.ChangeAvailability(stateId);
     }
 }

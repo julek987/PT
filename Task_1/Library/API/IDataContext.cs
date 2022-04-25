@@ -1,4 +1,6 @@
-﻿namespace Data.API;
+﻿using Data.Implementation;
+
+namespace Data.API;
 public abstract class IDataContext
 {
     public abstract void AddUser(IUsers user);
@@ -10,4 +12,9 @@ public abstract class IDataContext
     public abstract void AddRent(IRent rent);
 
     public abstract void AddReturn(IReturn returnn);
+
+    public static IDataContext CreateDataContext()
+    {
+        return new DataContext();
+    }
 }
