@@ -112,6 +112,22 @@ public class DataTests
             datarepo.DeleteEvent(toBeDeletedRent1);
             datarepo.DeleteUser(user);
             Assert.False(datarepo.UserExists("1"));
+        }
 
+        [Fact]
+        public void GettersTest()
+        {
+            var datarepo = IDataRepository.CreateDataRepository();
+            IUsers user = new Users("1", "Will", "Smith");
+            datarepo.AddUser(user);
+            Assert.Equal(user,datarepo.GetUser("1"));
+            ICatalog testCatalog = new TestCatalog("1", "'Harry Potter", "J. K. Rowling");
+            datarepo.AddCatalog(testCatalog);
+            Assert.Equal(testCatalog, datarepo.GetCatalog("1"));
+            IState testState = new State("1", testCatalog);
+            datarepo.AddState(testState);
+            Assert.Equal(testState,datarepo.GetState("1"));
+            
+            
         }
 }
