@@ -39,7 +39,7 @@ internal class DataRepository : IDataRepository
             if (e.UserId == u.Id)
                 ReturnCount++;
         if(RentCount!=ReturnCount)
-                throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
+                throw new Exception("User has an unreturned book, cannot be deleted.");
         dataContext.users.Remove(u);
     }
 
@@ -54,7 +54,7 @@ internal class DataRepository : IDataRepository
             if (e.UserId == id)
                 ReturnCount++;
         if(RentCount!=ReturnCount)
-                throw new Exception("Czytelnik posiada wypozyczenie wiec nie mozna go usunac");
+                throw new Exception("User has an unreturned book, cannot be deleted.");
         dataContext.users.Remove(dataContext.users.Single(u => u.Id == id));
     }
 
@@ -125,13 +125,6 @@ internal class DataRepository : IDataRepository
 
         throw new Exception("There is no such event");
     }
-
-    public override void DeleteEvent(int id)
-    {
-        if (id >= dataContext.events.Count()) throw new Exception("There is no such event");
-        dataContext.events.Remove(dataContext.events[id]);
-    }
-
     public override void AddState(IState s)
     {
         dataContext.states.Add(s);
