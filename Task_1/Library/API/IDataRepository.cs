@@ -24,8 +24,7 @@ public abstract class IDataRepository
     public abstract void AddEvent(IEvent e);
     public abstract IEnumerable<IEvent> GetAllEvents();
     public abstract void DeleteEvent(IEvent e);
-    public abstract void DeleteEvent(int id);
-
+    
     public abstract void AddState(IState s);
     public abstract IState GetState(string id);
     public abstract IEnumerable<IState> GetAllStates();
