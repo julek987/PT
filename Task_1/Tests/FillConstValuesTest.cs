@@ -3,7 +3,7 @@ using Data.API;
 using Data.Implementation;
 
 namespace TestProject1;
-internal class FillConstValues : IFill
+internal class FillConstValuesTest : IFill
 {
     public override void Fill(IDataContext dataContext)
     {
