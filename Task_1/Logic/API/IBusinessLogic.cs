@@ -1,5 +1,6 @@
-﻿using Logic.Implementation;
-
+﻿using System.Runtime.CompilerServices;
+using Logic.Implementation;
+[assembly:InternalsVisibleTo("Tests")]
 namespace Logic.API;
 
 public abstract class IBusinessLogic

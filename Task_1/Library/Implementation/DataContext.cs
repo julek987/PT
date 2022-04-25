@@ -16,7 +16,7 @@ internal class DataContext : IDataContext
         users.Add(user);
     }
 
-    //Catalog
+    //State
     public override void AddState(string id, string title, string author, string stateid)
     {
         var catalog = catalogs.GetValueOrDefault(id);
@@ -24,5 +24,23 @@ internal class DataContext : IDataContext
         var state = new State(stateid, catalog);
         catalogs[catalog.Id] = catalog;
         states.Add(state);
+    }
+    
+    //Catalog
+    public override void AddCatalog(ICatalog catalog)
+    {
+        catalogs.Add(catalog.Id, catalog);
+    }
+    
+    //Rent
+    public override void AddRent(IRent rent)
+    {
+        events.Add(rent);
+    }
+    
+    //Return
+    public override void AddReturn(IReturn returnn)
+    {
+        events.Add(returnn);
     }
 }

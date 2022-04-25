@@ -1,39 +1,38 @@
 ﻿using System;
 using Data.API;
+using Data.Implementation;
 
-namespace Data.Implementation;
-
-//DO WE NEED IT?
+namespace TestProject1;
 internal class FillConstValues : IFill
 {
-    public void Fill(IDataContext dataContext)
+    public override void Fill(IDataContext dataContext)
     {
         // Users fill
-        dataContext.AddUser(new Users("Tom", "Hanks", "0"));
-        dataContext.AddUser(new Users("Denzel", "Washington", "1"));
-        dataContext.users.Add(new Users("Morgan", "Freeman", "2"));
-        dataContext.users.Add(new Users("Harrison", "Ford", "3"));
-        dataContext.users.Add(new Users("Jack", "Nicholson", "4"));
+        dataContext.AddUser(new Users("0","Tom", "Hanks"));
+        dataContext.AddUser(new Users("1","Denzel", "Washington"));
+        dataContext.AddUser(new Users("2","Morgan", "Freeman"));
+        dataContext.AddUser(new Users("3","Harrison", "Ford"));
+        dataContext.AddUser(new Users("4","Jack", "Nicholson"));
 
         // Catalog fill
-        dataContext.catalogs.Add("0", new Catalog("Le Petit Prince", "Antoine de Saint-Exupéry", "0"));
-        dataContext.catalogs.Add("1", new Catalog("From Blood and Ash", "Jennifer L. Armentrout", "1"));
-        dataContext.catalogs.Add("2", new Catalog("The Great Gatsby", "F. Scott Fitzgerald", "2"));
-        dataContext.catalogs.Add("3", new Catalog("Pride and Prejudice", "Jane Austen", "3"));
-        dataContext.catalogs.Add("4", new Catalog("Anna Karenina", "Leo Tolstoy", "4"));
+        dataContext.AddCatalog(new Catalog("0","Le Petit Prince", "Antoine de Saint-Exupéry"));
+        dataContext.AddCatalog(new Catalog("1","From Blood and Ash", "Jennifer L. Armentrout"));
+        dataContext.AddCatalog(new Catalog("2","The Great Gatsby", "F. Scott Fitzgerald"));
+        dataContext.AddCatalog(new Catalog("3","Pride and Prejudice", "Jane Austen"));
+        dataContext.AddCatalog(new Catalog("4","Anna Karenina", "Leo Tolstoy"));
 
         // State fill
-        for (var i = 0; i < 5; i++)
-            dataContext.AddState(new State(dataContext.catalogs[i], i + 5, 5 * i, DateTime.Today));
+        dataContext.AddState("0","Le Petit Prince", "Antoine de Saint-Exupéry", "0");
+        dataContext.AddState("0","Le Petit Prince", "Antoine de Saint-Exupéry", "1");
+        dataContext.AddState("0","Le Petit Prince", "Antoine de Saint-Exupéry", "2");
+        dataContext.AddState("1","From Blood and Ash", "Jennifer L. Armentrout","3");
+        dataContext.AddState("1","From Blood and Ash", "Jennifer L. Armentrout","4");
+        dataContext.AddState("1","From Blood and Ash", "Jennifer L. Armentrout","5");
 
         // Events fill
-        for (var i = 0; i < 5; i++)
-            dataContext.events.Add(new Event(dataContext.users[i], dataContext.states[i], DateTime.Today));
-
-        //Adding additional data relations (many to one)
-        dataContext.events.Add(new Event(dataContext.users[0], dataContext.states[3], DateTime.Today));
-        dataContext.events.Add(new Event(dataContext.users[1], dataContext.states[3], DateTime.Today));
-        dataContext.events.Add(new Event(dataContext.users[2], dataContext.states[3], DateTime.Today));
-        dataContext.events.Add(new Event(dataContext.users[3], dataContext.states[3], DateTime.Today));
+        dataContext.AddRent(new Rent("0", "0"));
+        dataContext.AddRent(new Rent("1", "1"));
+        dataContext.AddRent(new Rent("2", "2"));
+        dataContext.AddReturn(new Return("0", "0"));
     }
 }
