@@ -14,6 +14,5 @@ internal class State : IState
 
     public string BookId => catalog.Id;
     public string StateId { get; set; }
-    
     public bool Available { get; set; }
 }
