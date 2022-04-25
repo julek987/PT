@@ -13,8 +13,9 @@ internal class BusinessLogic : IBusinessLogic
         _data.AddEvent(new Rent(stateId, userId));
     }
 
-    public override void ReturnBook(string stateId)
+    public override void ReturnBook(string userId, string stateId)
     {
-        throw new NotImplementedException();
+        _data.AddEvent(new Return(userId, stateId));
+        //throw new NotImplementedException();
     }
 }
