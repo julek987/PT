@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Data.Linq" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Baza.dbml">
+        <Generator>MSLinqToSQLGenerator</Generator>
+        <LastGenOutput>Baza.designer.cs</LastGenOutput>
+      </None>
+      <None Update="Properties\Settings.settings">
+        <Generator>SettingsSingleFileGenerator</Generator>
+        <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Service Include="{3259aa49-8aa1-44d3-9025-a0b520596a8c}" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Baza.designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Baza.dbml</DependentUpon>
+      </Compile>
+      <Compile Update="Properties\Settings.Designer.cs">
+        <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Settings.settings</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>
