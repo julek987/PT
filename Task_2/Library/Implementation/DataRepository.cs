@@ -10,7 +10,7 @@ internal class DataRepository : IDataRepository
         dataContext = new DataContext();
         dataFill.Fill(this);
     }
-
+    //User
     public override void AddUser(IUsers u)
     {
         dataContext.users.Add(u);
@@ -64,7 +64,7 @@ internal class DataRepository : IDataRepository
         }
         return false;
     }
-
+    //Catalog
     public override void AddCatalog(ICatalog c)
     {
         dataContext.catalogs.Add(c.Id, c);
@@ -101,7 +101,7 @@ internal class DataRepository : IDataRepository
     {
         return dataContext.catalogs.ContainsKey(id);
     }
-
+    //Event
     public override void AddEvent(IEvent e)
     {
         dataContext.events.Add(e);
@@ -123,6 +123,7 @@ internal class DataRepository : IDataRepository
 
         throw new Exception("There is no such event");
     }
+    //State
     public override void AddState(IState s)
     {
         dataContext.states.Add(s);

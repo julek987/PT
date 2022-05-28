@@ -1,6 +1,6 @@
 # Programming Technology Lab
 
-## Team
+## Team 14.00
 
 | Name Surname (initials) | GUID                                     |
 | ----------------------- | ---------------------------------------- |
