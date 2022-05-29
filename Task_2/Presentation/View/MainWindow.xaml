@@ -5,8 +5,87 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Presentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="550" Width="655">
+    <Grid Margin="0,0,0,-6">
+        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,72,0,0" VerticalAlignment="Top" Width="205" Click="Button_Click"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Height="20" Margin="220,72,0,0" VerticalAlignment="Top" Width="197" Click="Button_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="422,72,0,0" VerticalAlignment="Top" Width="224" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.021"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Text="Book ID"/><Run Language="pl-pl" Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Title:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Author"/><Run Text=":"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="254,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="475,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="12,174,0,0" VerticalAlignment="Top" Width="205" Click="Button_Click"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Height="20" Margin="222,174,0,0" VerticalAlignment="Top" Width="197" Click="Button_Click" RenderTransformOrigin="0.515,0.541"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="424,174,0,0" VerticalAlignment="Top" Width="224" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.021"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="State"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="pl-pl" Text="Available"/><Run Text=":"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="268,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="480,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,294,0,0" VerticalAlignment="Top" Width="205" Click="Button_Click"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Height="20" Margin="220,294,0,0" VerticalAlignment="Top" Width="197" Click="Button_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="422,294,0,0" VerticalAlignment="Top" Width="224" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.021"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="User"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Name"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="pl-pl" Text="Surname"/><Run Text=":"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="268,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="480,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="292,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"><Run Language="pl-pl" Text="CATALOG"/></TextBlock>
+        <Rectangle HorizontalAlignment="Left" Height="16" Margin="10,3,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
+        <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,107,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
+        <Rectangle HorizontalAlignment="Left" Height="17" Margin="12,219,0,0" Stroke="Black" VerticalAlignment="Top" Width="634"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="304,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Text="STATE"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="304,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="-0.933,0.579"><Run Language="pl-pl" Text="USERS"/></TextBlock>
+        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,400,0,0" VerticalAlignment="Top" Width="636" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book "/><Run Text="ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="State ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="pl-pl" Text="User ID"/><Run Text=":"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="268,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="480,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+        <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,332,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="307,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" RenderTransformOrigin="-1.005,0.508"><Run Language="pl-pl" Text="RENT"/></TextBlock>
+        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,503,0,0" VerticalAlignment="Top" Width="636" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="State ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="pl-pl" Text="User ID"/><Run Text=":"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="268,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="480,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+        <Rectangle HorizontalAlignment="Left" Height="17" Margin="12,435,0,0" Stroke="Black" VerticalAlignment="Top" Width="634"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="299,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" RenderTransformOrigin="0.687,3.508"><Run Language="pl-pl" Text="RETURN"/></TextBlock>
+
 
     </Grid>
 </Window>

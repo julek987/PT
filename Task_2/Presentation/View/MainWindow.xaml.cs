@@ -15,14 +15,23 @@ using System.Windows.Shapes;
 
 namespace Presentation
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private ViewModel viewModel = new ViewModel(new Model());
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += (s, e) => DataContext = viewModel;
+        }
+
+        private void Button_1_Add(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

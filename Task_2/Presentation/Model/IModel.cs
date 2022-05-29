@@ -1,6 +1,6 @@
 ﻿using Service.API;
 
-namespace Presentation.Model;
+namespace Presentation;
 public interface IModel
 {
     IService Service

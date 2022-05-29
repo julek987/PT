@@ -1,6 +1,6 @@
 ﻿using Service.API;
 
-namespace Presentation.Model;
+namespace Presentation;
 public class Model
 {
     private IService service;
@@ -8,5 +8,19 @@ public class Model
     public IService Service
     {
         get { return service; }
+
     }
+    /*
+    public Model(IService service = default(IService))
+    {
+        if (service == null)
+        {
+            this.service = DataServiceFactory.CreateService();
+        }
+        else
+        {
+            this.service = service;
+        }
+    }
+    */
 }
