@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Presentation"
+        xmlns:local="clr-namespace:Presentation" d:DataContext="{d:DesignInstance Type=local:ViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="655">
     <Grid Margin="0,0,0,-6">
@@ -19,7 +19,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding Path=ViewModel.SelectedBook.id}"/>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Text="Book ID"/><Run Language="pl-pl" Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Title:"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Author"/><Run Text=":"/></TextBlock>

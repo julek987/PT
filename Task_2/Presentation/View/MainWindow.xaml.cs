@@ -24,14 +24,5 @@ namespace Presentation
             Loaded += (s, e) => DataContext = viewModel;
         }
 
-        private void Button_1_Add(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
