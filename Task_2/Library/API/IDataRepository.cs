@@ -5,6 +5,7 @@ namespace Data.API;
 
 public abstract class IDataRepository
 {
+    /*
     public abstract void AddUser(IUsers u);
     public abstract IUsers GetUser(string id);
     public abstract IEnumerable<IUsers> GetAllUsers();
@@ -33,11 +34,39 @@ public abstract class IDataRepository
     public abstract bool StateExists(string id);
     public abstract bool IsAvailable(string id);
     public abstract void ChangeAvailability(string id);
+    */
 
     public static IDataRepository CreateDataRepository(IFill? fill = default)
     {
         return new DataRepository(fill ?? new EmptyFill());
     }
     
-    
+    //Catalog
+    Task<ICatalog> GetCatalog(int id);
+    Task<IEnumerable<ICatalog>> GetAllCatalogs();
+    Task AddCatalog(ICatalog c);
+    Task UpdateCatalog(ICatalog c);
+    Task DeleteCatalog(ICatalog c);
+
+    //User
+    Task<IUsers> GetUser(string id);
+    Task<IEnumerable<IUsers>> GetAllUsers();
+    Task AddUser(IUsers u);
+    Task UpdateUser(IUsers u);
+    Task DeleteUser(IUsers u);
+
+    //State
+    Task<IState> GetState(string id);
+    Task<IEnumerable<IState>> GetAllStates();
+    Task AddState(IState s);
+    Task UpdateState(IState s);
+    Task DeleteState(IState s);
+
+    //Event
+    Task<IEnumerable<IEvent>> GetAllEvents();
+    Task AddEvent(IEvent e);
+    Task UpdateEvent(IEvent e);
+    Task DeleteEvent(IEvent e);
+
+
 }

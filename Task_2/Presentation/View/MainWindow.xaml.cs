@@ -24,5 +24,14 @@ namespace Presentation
             Loaded += (s, e) => DataContext = viewModel;
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Add_Book_Info_Button(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
