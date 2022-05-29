@@ -10,23 +10,23 @@ internal class DataRepository : IDataRepository
         dataContext = new DataContext();
         dataFill.Fill(this);
     }
-
-    public override void AddUser(IUsers u)
+    #region old
+    public void AddUser(IUsers u)
     {
         dataContext.users.Add(u);
     }
 
-    public override IUsers GetUser(string id)
+    public IUsers GetUser(string id)
     {
         return dataContext.users.Single(u => u.Id == id);
     }
 
-    public override IEnumerable<IUsers> GetAllUsers()
+    public IEnumerable<IUsers> GetAllUsers()
     {
         return dataContext.users;
     }
 
-    public override void DeleteUser(IUsers u) //if we have a user. 
+    public void DeleteUser(IUsers u) //if we have a user. 
     {
         int RentCount = 0;
         int ReturnCount = 0;
@@ -41,7 +41,7 @@ internal class DataRepository : IDataRepository
         dataContext.users.Remove(u);
     }
 
-    public override void DeleteUserWithId(string id)
+    public void DeleteUserWithId(string id)
     {
         int RentCount = 0;
         int ReturnCount = 0;
@@ -56,7 +56,7 @@ internal class DataRepository : IDataRepository
         dataContext.users.Remove(dataContext.users.Single(u => u.Id == id));
     }
 
-    public override bool UserExists(string id)
+    public bool UserExists(string id)
     {
         foreach (var user in dataContext.users)
         {
@@ -65,22 +65,22 @@ internal class DataRepository : IDataRepository
         return false;
     }
 
-    public override void AddCatalog(ICatalog c)
+    public void AddCatalog(ICatalog c)
     {
         dataContext.catalogs.Add(c.Id, c);
     }
 
-    public override ICatalog GetCatalog(string id)
+    public ICatalog GetCatalog(string id)
     {
         return dataContext.catalogs[id];
     }
 
-    public override IEnumerable<ICatalog> GetAllCatalogs()
+    public IEnumerable<ICatalog> GetAllCatalogs()
     {
         return dataContext.catalogs.Values;
     }
 
-    public override void DeleteCatalogWithId(string id)
+    public void DeleteCatalogWithId(string id)
     {
         foreach (var s in dataContext.states)
             if (s.Catalog.Id == id)
@@ -88,7 +88,7 @@ internal class DataRepository : IDataRepository
         dataContext.catalogs.Remove(id);
     }
 
-    public override void DeleteCatalog(ICatalog c) // If we have a catalog.
+    public void DeleteCatalog(ICatalog c) // If we have a catalog.
     {
         foreach (var s in dataContext.states)
             if (s.Catalog.Id == c.Id)
@@ -97,22 +97,22 @@ internal class DataRepository : IDataRepository
         dataContext.catalogs.Remove(c.Id);
     }
 
-    public override bool CatalogExists(string id)
+    public bool CatalogExists(string id)
     {
         return dataContext.catalogs.ContainsKey(id);
     }
 
-    public override void AddEvent(IEvent e)
+    public void AddEvent(IEvent e)
     {
         dataContext.events.Add(e);
     }
 
-    public override IEnumerable<IEvent> GetAllEvents()
+    public IEnumerable<IEvent> GetAllEvents()
     {
         return dataContext.events;
     }
 
-    public override void DeleteEvent(IEvent e)
+    public void DeleteEvent(IEvent e)
     {
         foreach (var ee in dataContext.events)
             if (e.Equals(ee))
@@ -123,22 +123,22 @@ internal class DataRepository : IDataRepository
 
         throw new Exception("There is no such event");
     }
-    public override void AddState(IState s)
+    public void AddState(IState s)
     {
         dataContext.states.Add(s);
     }
 
-    public override IState GetState(string id)
+    public IState GetState(string id)
     {
         return dataContext.states.Single(s => s.Id == id);
     }
 
-    public override IEnumerable<IState> GetAllStates()
+    public IEnumerable<IState> GetAllStates()
     {
         return dataContext.states;
     }
 
-    public override void DeleteState(IState s) // If we have a state
+    public void DeleteState(IState s) // If we have a state
     {
         foreach (var e in dataContext.events)
             if (e.StateId == s.Id)
@@ -146,7 +146,7 @@ internal class DataRepository : IDataRepository
         dataContext.states.Remove(s);
     }
 
-    public override void DeleteStateWithId(string id)
+    public void DeleteStateWithId(string id)
     {
         foreach (var e in dataContext.events)
             if (e.StateId == id)
@@ -154,7 +154,7 @@ internal class DataRepository : IDataRepository
         dataContext.states.Remove(dataContext.states.Single(s => s.Id == id));
     }
 
-    public override bool StateExists(string id)
+    public bool StateExists(string id)
     {
         foreach (var state in dataContext.states)
         {
@@ -163,7 +163,7 @@ internal class DataRepository : IDataRepository
         return false;
     }
 
-    public override bool IsAvailable(string id)
+    public bool IsAvailable(string id)
     {
         foreach (var s in dataContext.states)
         {
@@ -175,7 +175,7 @@ internal class DataRepository : IDataRepository
         return false;
     }
 
-    public override void ChangeAvailability(string id)
+    public void ChangeAvailability(string id)
     {
         foreach (var s in dataContext.states)
         {
@@ -191,4 +191,100 @@ internal class DataRepository : IDataRepository
             }
         }
     }
+    #endregion
+    public Task<ICatalog> TGetCatalog(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<ICatalog>> TGetAllCatalogs()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TAddCatalog(ICatalog c)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TUpdateCatalog(ICatalog c)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TDeleteCatalog(ICatalog c)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IUsers> TGetUser(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<IUsers>> TGetAllUsers()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TAddUser(IUsers u)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TUpdateUser(IUsers u)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TDeleteUser(IUsers u)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IState> TGetState(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<IState>> TGetAllStates()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TAddState(IState s)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TUpdateState(IState s)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TDeleteState(IState s)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<IEvent>> TGetAllEvents()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TAddEvent(IEvent e)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TUpdateEvent(IEvent e)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task TDeleteEvent(IEvent e)
+    {
+        throw new NotImplementedException();
+    }
+    
 }
