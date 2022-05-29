@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presentation.View
+namespace Presentation.Model
 {
-    internal class Class1
+    internal class Model
     {
     }
 }

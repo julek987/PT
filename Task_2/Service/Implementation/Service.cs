@@ -3,11 +3,11 @@ using Data.API;
 
 namespace Service.Implementation
 {
-    public class Service : IService
+    public class DataService : IService
     {
         private IDataRepository dataRepository;
 
-        internal  Service(IDataRepository dataRepository)
+        internal  DataService(IDataRepository dataRepository)
         {
             this.dataRepository = dataRepository;
         }
