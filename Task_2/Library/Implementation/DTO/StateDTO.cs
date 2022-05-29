@@ -9,10 +9,8 @@ namespace Data.Implementation
 {
     public class StateDTO : IState
     {
-        public string Id { get; init; }
-
         [ForeignKey(nameof(Catalog))]
-        public string CatalogDTOId { get; set; }
+        public string Id { get; init; }
 
         public ICatalog Catalog { get; set; }
         public bool Available { get; set; }

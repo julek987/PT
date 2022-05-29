@@ -1,6 +1,6 @@
 ﻿using Data.API;
 using Microsoft.EntityFrameworkCore;
-
+using System.Net.Http;
 namespace Data.Implementation;
 
 internal class DataContext : DbContext, IDataContext
@@ -43,5 +43,35 @@ internal class DataContext : DbContext, IDataContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<StateDTO>().HasOne(state => (CatalogDTO)state.Catalog);
+    }
+
+    public async Task AddUserAsync(IUsers user)
+    {
+        UsersDTO userToAdd = new() { FirstName = user.FirstName, LastName = user.LastName, Id = user.Id };
+        await AddAsync(userToAdd);
+    }
+
+    public async Task AddCatalogAsync(ICatalog catalog)
+    {
+        CatalogDTO catalogToAdd = new() { Id = catalog.Id, Author = catalog.Author, Title = catalog.Title};
+        await AddAsync(catalogToAdd);
+    }
+
+    public async Task AddStateAsync(IState state)
+    {
+        //TO DO
+        //StateDTO stateToAdd = new() { Available = true, Id = state.Id, state.Catalog };
+    }
+
+    public async Task AddRentAsync(IRent rent)
+    {
+        RentDTO rentToAdd = new() { Id = rent.Id, StateId = rent.StateId, UserId = rent.UserId };
+        await AddAsync(rentToAdd);
+    }
+
+    public async Task AddReturnAsync(IReturn rreturn)
+    {
+        ReturnDTO returnToAdd = new() { Id = rreturn.Id, StateId = rreturn.StateId, UserId = rreturn.UserId };
+        await AddAsync(returnToAdd);
     }
 }

@@ -43,7 +43,7 @@ public interface IDataRepository
     }
     
     //Catalog
-    Task<ICatalog> TGetCatalog(int id);
+    /*Task<ICatalog> TGetCatalog(string id);
     Task<IEnumerable<ICatalog>> TGetAllCatalogs();
     Task TAddCatalog(ICatalog c);
     Task TUpdateCatalog(ICatalog c);
@@ -68,6 +68,6 @@ public interface IDataRepository
     Task TAddEvent(IEvent e);
     Task TUpdateEvent(IEvent e);
     Task TDeleteEvent(IEvent e);
-
+    */
 
 }

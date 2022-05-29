@@ -1,10 +1,9 @@
 ﻿using Data.API;
-
 namespace Data.Implementation;
 internal class DataRepository : IDataRepository
 {
     private readonly DataContext dataContext;
-
+    IDataContext context = IDataContext.CreateContext();
     public DataRepository(IFill dataFill)
     {
         dataContext = new DataContext();
@@ -192,99 +191,99 @@ internal class DataRepository : IDataRepository
         }
     }
     #endregion
-    public Task<ICatalog> TGetCatalog(int id)
+    /*public async Task<ICatalog> TGetCatalog(string id)
+    {
+        return await Task.Run<ICatalog>(() => dataContext.Catalogs.Where(b => b.Id == id).FirstOrDefault());
+    }
+
+    public async Task<IEnumerable<ICatalog>> TGetAllCatalogs()
+    {
+        return await Task.Run<IEnumerable<ICatalog>>(() => dataContext.Catalogs);
+    }
+
+    public async Task TAddCatalog(ICatalog c)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<ICatalog>> TGetAllCatalogs()
+    public async Task TUpdateCatalog(ICatalog c)
     {
         throw new NotImplementedException();
     }
 
-    public Task TAddCatalog(ICatalog c)
+    public async Task TDeleteCatalog(ICatalog c)
     {
         throw new NotImplementedException();
     }
 
-    public Task TUpdateCatalog(ICatalog c)
+    public async Task<IUsers> TGetUser(string id)
     {
         throw new NotImplementedException();
     }
 
-    public Task TDeleteCatalog(ICatalog c)
+    public async Task<IEnumerable<IUsers>> TGetAllUsers()
     {
         throw new NotImplementedException();
     }
 
-    public Task<IUsers> TGetUser(string id)
+    public async Task TAddUser(IUsers u)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<IUsers>> TGetAllUsers()
+    public async Task TUpdateUser(IUsers u)
     {
         throw new NotImplementedException();
     }
 
-    public Task TAddUser(IUsers u)
+    public async Task TDeleteUser(IUsers u)
     {
         throw new NotImplementedException();
     }
 
-    public Task TUpdateUser(IUsers u)
+    public async Task<IState> TGetState(string id)
     {
         throw new NotImplementedException();
     }
 
-    public Task TDeleteUser(IUsers u)
+    public async Task<IEnumerable<IState>> TGetAllStates()
     {
         throw new NotImplementedException();
     }
 
-    public Task<IState> TGetState(string id)
+    public async Task TAddState(IState s)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<IState>> TGetAllStates()
+    public async Task TUpdateState(IState s)
     {
         throw new NotImplementedException();
     }
 
-    public Task TAddState(IState s)
+    public async Task TDeleteState(IState s)
     {
         throw new NotImplementedException();
     }
 
-    public Task TUpdateState(IState s)
+    public async Task<IEnumerable<IEvent>> TGetAllEvents()
     {
         throw new NotImplementedException();
     }
 
-    public Task TDeleteState(IState s)
+    public async Task TAddEvent(IEvent e)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<IEvent>> TGetAllEvents()
+    public async Task TUpdateEvent(IEvent e)
     {
         throw new NotImplementedException();
     }
 
-    public Task TAddEvent(IEvent e)
+    public async Task TDeleteEvent(IEvent e)
     {
         throw new NotImplementedException();
     }
-
-    public Task TUpdateEvent(IEvent e)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task TDeleteEvent(IEvent e)
-    {
-        throw new NotImplementedException();
-    }
-    
+    */
 }
