@@ -2,8 +2,7 @@
 
 public interface IState
 {
-    string BookId { get; }
-    string StateId { get; set; }
-    
+    public ICatalog Catalog { get; set; }
+    string Id { get;}
     bool Available { get; set; }
 }

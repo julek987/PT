@@ -12,4 +12,5 @@ internal class Return : IReturn
 
     public string StateId { get; }
     public string UserId { get; }
+    public string Id { get; set; }
 }

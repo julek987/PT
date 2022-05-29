@@ -83,7 +83,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteCatalogWithId(string id)
     {
         foreach (var s in dataContext.states)
-            if (s.BookId == id)
+            if (s.Catalog.Id == id)
                 throw new Exception("Cannot remove object. Is in use by State");
         dataContext.catalogs.Remove(id);
     }
@@ -91,7 +91,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteCatalog(ICatalog c) // If we have a catalog.
     {
         foreach (var s in dataContext.states)
-            if (s.BookId == c.Id)
+            if (s.Catalog.Id == c.Id)
                 throw new Exception("Cannot remove object. Is in use by State");
 
         dataContext.catalogs.Remove(c.Id);
@@ -130,7 +130,7 @@ internal class DataRepository : IDataRepository
 
     public override IState GetState(string id)
     {
-        return dataContext.states.Single(s => s.StateId == id);
+        return dataContext.states.Single(s => s.Id == id);
     }
 
     public override IEnumerable<IState> GetAllStates()
@@ -141,7 +141,7 @@ internal class DataRepository : IDataRepository
     public override void DeleteState(IState s) // If we have a state
     {
         foreach (var e in dataContext.events)
-            if (e.StateId == s.StateId)
+            if (e.StateId == s.Id)
                 throw new Exception("State is in use");
         dataContext.states.Remove(s);
     }
@@ -151,14 +151,14 @@ internal class DataRepository : IDataRepository
         foreach (var e in dataContext.events)
             if (e.StateId == id)
                 throw new Exception("State is in use");
-        dataContext.states.Remove(dataContext.states.Single(s => s.StateId == id));
+        dataContext.states.Remove(dataContext.states.Single(s => s.Id == id));
     }
 
     public override bool StateExists(string id)
     {
         foreach (var state in dataContext.states)
         {
-            if (state.StateId == id) return true;
+            if (state.Id == id) return true;
         }
         return false;
     }
@@ -167,7 +167,7 @@ internal class DataRepository : IDataRepository
     {
         foreach (var s in dataContext.states)
         {
-            if (s.StateId == id)
+            if (s.Id == id)
             {
                 if (s.Available) return true;
             }
@@ -179,7 +179,7 @@ internal class DataRepository : IDataRepository
     {
         foreach (var s in dataContext.states)
         {
-            if (s.StateId == id)
+            if (s.Id == id)
             {
                 if (s.Available)
                 {

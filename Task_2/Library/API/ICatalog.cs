@@ -2,7 +2,7 @@
 
 public interface ICatalog
 {
-    string Title { get; set; }
-    string Author { get; set; }
-    string Id { get; set; }
+    public string Title { get;}
+    public string Author { get;}
+    public string Id { get;}
 }
