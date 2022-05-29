@@ -122,5 +122,21 @@ namespace Presentation
         {
 
         }
+
+        private void Button_Click_ViewTheTables_View(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ListView_Books(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListView_Users(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
     }
 }

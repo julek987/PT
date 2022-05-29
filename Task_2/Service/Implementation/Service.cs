@@ -12,6 +12,7 @@ namespace Service.Implementation
             this.dataRepository = dataRepository;
         }
 
+        /*
         public Task AddState(int id, int book_id, string available)
         {
             throw new NotImplementedException();
@@ -51,5 +52,6 @@ namespace Service.Implementation
         {
             throw new NotImplementedException();
         }
+        */
     }
 }

@@ -1,22 +1,40 @@
-﻿using Data.API;
+﻿using Data;
+using Data.API;
 using Service.Implementation;
 
 namespace Service.API;
     public interface IService
     {
-        Task AddUser(string id, string Firstname, string Lastname );
-        Task DeleteUser(int id);
-        //Task IEnumerable<IUsers> GetAllUsers();
-        Task AddState(int id, int book_id, string available);
-        Task DeleteState(int id);
-        Task DeleteBook(int id);
-        Task DeleteEvent(int id);
-       
-        
-        Task BorrowBook(string userId, string stateId);
-        Task ReturnBook(string userId, string stateId);
 
-    }
+    //Catalog
+    Task<ICatalog> ITGetCatalog(int id);
+    Task<IEnumerable<ICatalog>> ITGetAllCatalogs();
+    Task ITAddCatalog(ICatalog c);
+    Task ITUpdateCatalog(ICatalog c);
+    Task ITDeleteCatalog(ICatalog c);
+
+    //User
+    Task<IUsers> ITGetUser(string id);
+    Task<IEnumerable<IUsers>> ITGetAllUsers();
+    Task ITAddUser(IUsers u);
+    Task ITUpdateUser(IUsers u);
+    Task ITDeleteUser(IUsers u);
+
+    //State
+    Task<IState> ITGetState(string id);
+    Task<IEnumerable<IState>> ITGetAllStates();
+    Task ITAddState(IState s);
+    Task ITUpdateState(IState s);
+    Task ITDeleteState(IState s);
+
+    //Event
+    Task<IEnumerable<IEvent>> ITGetAllEvents();
+    Task ITAddEvent(IEvent e);
+    Task ITUpdateEvent(IEvent e);
+    Task ITDeleteEvent(IEvent e);
+
+}
+/*
     public interface IModelCatalog
     {
         public string Title { get; }
@@ -50,12 +68,12 @@ namespace Service.API;
         string Id { get; set; }
     }
 
-    /*public static IService CreateLogic(IDataRepository? dataRepository = default)
+    public static IService CreateLogic(IDataRepository? dataRepository = default)
     {
         return new Service(dataRepository ?? IDataRepository.CreateDataRepository());
-    }*/
+    }
 
-    /* TO DO :
+   
      public abstract class DataServiceFactory
     {
         public static IService CreateService(IRepository repository = default)
