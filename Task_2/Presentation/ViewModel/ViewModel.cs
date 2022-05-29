@@ -39,5 +39,4 @@ public class ViewModel
     }
 
     //Catalog
-    private IEnumerable<IModel>
 }

@@ -1,8 +1,7 @@
 ﻿using Data.API;
 using Service.Implementation;
 
-namespace Service.API
-{
+namespace Service.API;
     public interface IService
     {
         Task AddUser(string id, string Firstname, string Lastname );
@@ -51,12 +50,10 @@ namespace Service.API
         string Id { get; set; }
     }
 
-    /*
-    public static IService CreateLogic(IDataRepository? dataRepository = default)
+    /*public static IService CreateLogic(IDataRepository? dataRepository = default)
     {
         return new Service(dataRepository ?? IDataRepository.CreateDataRepository());
-    }
-    */
+    }*/
 
     /* TO DO :
      public abstract class DataServiceFactory
@@ -68,6 +65,3 @@ namespace Service.API
     }
     */
 
-
-
-}
