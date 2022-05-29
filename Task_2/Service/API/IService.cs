@@ -51,10 +51,12 @@ namespace Service.API
         string Id { get; set; }
     }
 
+    /*
     public static IService CreateLogic(IDataRepository? dataRepository = default)
     {
         return new Service(dataRepository ?? IDataRepository.CreateDataRepository());
     }
+    */
 
     /* TO DO :
      public abstract class DataServiceFactory
