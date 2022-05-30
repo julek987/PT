@@ -43,4 +43,5 @@ namespace Presentation
         public IList<ICatalogModel> Catalogs { get; }
     }
 
+
 }

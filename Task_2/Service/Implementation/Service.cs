@@ -1,5 +1,6 @@
 ﻿using Service.API;
 using Data.API;
+using Data;
 
 namespace Service.Implementation
 {
@@ -10,6 +11,101 @@ namespace Service.Implementation
         internal  DataService(IDataRepository dataRepository)
         {
             this.dataRepository = dataRepository;
+        }
+
+        public Task ITAddCatalog(ICatalog c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITAddEvent(IEvent e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITAddState(IState s)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITAddUser(IUsers u)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITDeleteCatalog(ICatalog c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITDeleteEvent(IEvent e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITDeleteState(IState s)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITDeleteUser(IUsers u)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<ICatalog>> ITGetAllCatalogs()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<IEvent>> ITGetAllEvents()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<IState>> ITGetAllStates()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<IUsers>> ITGetAllUsers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ICatalog> ITGetCatalog(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IState> ITGetState(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IUsers> ITGetUser(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITUpdateCatalog(ICatalog c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITUpdateEvent(IEvent e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITUpdateState(IState s)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ITUpdateUser(IUsers u)
+        {
+            throw new NotImplementedException();
         }
 
         /*
