@@ -1,31 +1,39 @@
-﻿using Data;
-using Data.API;
-using Service.Implementation;
-
-namespace Service.API;
+﻿namespace Service.API;
     public interface IService
     {
 
     //Catalog
-    Task<ICatalog> ITGetCatalog(int id);
-    Task<IEnumerable<ICatalog>> ITGetAllCatalogs();
-    Task ITAddCatalog(ICatalog c);
-    Task ITUpdateCatalog(ICatalog c);
-    Task ITDeleteCatalog(ICatalog c);
+    Task<ICatalog> IGetCatalog(string id);
+    Task<IEnumerable<ICatalog>> IGetAllCatalogs();
+    Task IAddCatalog(ICatalog c);
+    Task IUpdateCatalog(ICatalog c);
+    Task IDeleteCatalog(string id);
 
     //User
-    Task<IUsers> ITGetUser(string id);
-    Task<IEnumerable<IUsers>> ITGetAllUsers();
-    Task ITAddUser(IUsers u);
-    Task ITUpdateUser(IUsers u);
-    Task ITDeleteUser(IUsers u);
+    Task<IUsers> IGetUser(string id);
+    Task<IEnumerable<IUsers>> IGetAllUsers();
+    Task IAddUser(IUsers u);
+    Task IUpdateUser(IUsers u);
+    Task IDeleteUser(string id);
 
     //State
-    Task<IState> ITGetState(string id);
-    Task<IEnumerable<IState>> ITGetAllStates();
-    Task ITAddState(IState s);
-    Task ITUpdateState(IState s);
-    Task ITDeleteState(IState s);
+    Task<IState> IGetState(string id);
+    Task<IEnumerable<IState>> IGetAllStates();
+    Task IAddState(IState s);
+    Task IUpdateState(IState s);
+    Task IDeleteState(string id);
+
+    //Rent
+    Task <IRent> IGetRent(string id);
+    Task<IEnumerable<IRent>> IGetAllRents();
+    Task IAddRent(IRent r);
+    Task IDeleteRent(string id);
+
+    //Return
+    Task<IReturn> IGetReturn(string id);
+    Task<IEnumerable<IReturn>> IGetAllReturns();
+    Task IAddReturn(IReturn rn);
+    Task IDeleteReturn(string id);
 
 
 }

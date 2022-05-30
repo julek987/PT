@@ -6,128 +6,149 @@ namespace Service.Implementation
 {
     public class DataService : IService
     {
-        private IDataRepository dataRepository;
 
-        internal  DataService(IDataRepository dataRepository)
+
+        private IDataContext dataContext;
+
+        internal  DataService(IDataContext dataContext)
         {
-            this.dataRepository = dataRepository;
+            this.dataContext = dataContext;
         }
 
-        public Task ITAddCatalog(ICatalog c)
+        public async Task IAddCatalog(API.ICatalog c)
         {
+            await dataContext.AddCatalogAsync(new Catalog(c.Id, c.Title, c.Author));
+        }
+
+        public async Task IAddRent(API.IRent r)
+        {
+            await dataContext.AddRentAsync(new Rent()
+            {
+                //TO DO
+                Id = r.Id,
+                //State = dataContext.FindAsync(r.State.Id),
+                //User = dataContext.User
+
+            }) ;
+        }
+
+        public async Task IAddReturn(API.IReturn rn)
+        {
+               // TO DO
+        }
+
+        public async Task IAddState(API.IState s)
+        {
+               // TO DO
+        }
+
+        public async Task IAddUser(API.IUsers u)
+        {
+            await dataContext.AddUserAsync(new Users(u.Id, u.FirstName, u.LastName));
+        }
+
+        public async Task IDeleteCatalog(string id)
+        {
+            await dataContext.DeleteCatalogAsync(id);
+        }
+
+        public async Task IDeleteRent(string id)
+        {
+            await dataContext.DeleteRentAsync(id);
+        }
+
+        public async Task IDeleteReturn(string id)
+        {
+            await dataContext.DeleteReturnAsync(id);
+        }
+
+        public async Task IDeleteState(string id)
+        {
+            await dataContext.DeleteStateAsync(id);
+        }
+
+        public async Task IDeleteUser(string id)
+        {
+            await dataContext.DeleteUserAsync(id);
+        }
+
+        public async Task<IEnumerable<API.ICatalog>> IGetAllCatalogs()
+        {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task ITAddState(IState s)
+        public async Task<IEnumerable<API.IRent>> IGetAllRents()
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task ITAddUser(IUsers u)
+        public async  Task<IEnumerable<API.IReturn>> IGetAllReturns()
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task ITDeleteCatalog(ICatalog c)
+        public async Task<IEnumerable<API.IState>> IGetAllStates()
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task ITDeleteState(IState s)
+        public async Task<IEnumerable<API.IUsers>> IGetAllUsers()
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task ITDeleteUser(IUsers u)
+        public async  Task<API.ICatalog> IGetCatalog(string id)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ICatalog>> ITGetAllCatalogs()
+        public async Task<API.IRent> IGetRent(string id)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<IState>> ITGetAllStates()
+        public async Task<API.IReturn> IGetReturn(string id)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<IUsers>> ITGetAllUsers()
+        public async Task<API.IState> IGetState(string id)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task<ICatalog> ITGetCatalog(int id)
+        public async Task<API.IUsers> IGetUser(string id)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task<IState> ITGetState(string id)
+        public async Task IUpdateCatalog(API.ICatalog c)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task<IUsers> ITGetUser(string id)
+        public async Task IUpdateState(API.IState s)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task ITUpdateCatalog(ICatalog c)
+        public async Task IUpdateUser(API.IUsers u)
         {
+            // TO DO
             throw new NotImplementedException();
         }
 
-        public Task ITUpdateState(IState s)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task ITUpdateUser(IUsers u)
-        {
-            throw new NotImplementedException();
-        }
-
-        /*
-        public Task AddState(int id, int book_id, string available)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task AddUser(string id, string Firstname, string Lastname)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task BorrowBook(string userId, string stateId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteBook(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteEvent(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteState(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteUser(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task ReturnBook(string userId, string stateId)
-        {
-            throw new NotImplementedException();
-        }
-        */
     }
 }
