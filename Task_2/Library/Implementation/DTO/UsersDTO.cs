@@ -7,7 +7,7 @@ using Data.API;
 
 namespace Data.Implementation
 {
-    public class UsersDTO : IUsers
+    internal class UsersDTO : IUsers
     {
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;

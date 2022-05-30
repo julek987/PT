@@ -17,11 +17,6 @@ internal class DataContext : DbContext, IDataContext
         this._connectionString = connectionString ?? defaultConnectionString;
     }
 
-    internal Dictionary<string, ICatalog> catalogs = new();
-    internal List<IEvent> events = new();
-    internal List<IState> states = new();
-    internal List<IUsers> users = new();
-
     public DbSet<UsersDTO> _users { get; set; }
     public IQueryable<IUsers> Users => _users;
     public DbSet<RentDTO> _rents { get; set; }
@@ -48,30 +43,39 @@ internal class DataContext : DbContext, IDataContext
     public async Task AddUserAsync(IUsers user)
     {
         UsersDTO userToAdd = new() { FirstName = user.FirstName, LastName = user.LastName, Id = user.Id };
-        await AddAsync(userToAdd);
+        await _users.AddAsync(userToAdd);
+        await SaveChangesAsync();
     }
 
     public async Task AddCatalogAsync(ICatalog catalog)
     {
         CatalogDTO catalogToAdd = new() { Id = catalog.Id, Author = catalog.Author, Title = catalog.Title};
-        await AddAsync(catalogToAdd);
+        await _catalogs.AddAsync(catalogToAdd);
+        await SaveChangesAsync();
     }
 
     public async Task AddStateAsync(IState state)
     {
-        //TO DO
-        //StateDTO stateToAdd = new() { Available = true, Id = state.Id, state.Catalog };
+        StateDTO stateToAdd = new() { Available = true, Id = state.Id, Catalog = state.Catalog};
+        await _states.AddAsync(stateToAdd);
+        await SaveChangesAsync();
     }
 
     public async Task AddRentAsync(IRent rent)
     {
-        RentDTO rentToAdd = new() { Id = rent.Id, StateId = rent.StateId, UserId = rent.UserId };
-        await AddAsync(rentToAdd);
+        RentDTO rentToAdd = new() { Id = rent.Id, State = rent.State, User = rent.User };
+        await _rents.AddAsync(rentToAdd);
+        await SaveChangesAsync();
     }
 
-    public async Task AddReturnAsync(IReturn rreturn)
+    public async Task AddReturnAsync(IReturn @return)
     {
-        ReturnDTO returnToAdd = new() { Id = rreturn.Id, StateId = rreturn.StateId, UserId = rreturn.UserId };
-        await AddAsync(returnToAdd);
+        ReturnDTO returnToAdd = new() { Id = @return.Id, State = @return.State, User = @return.User };
+        await _returns.AddAsync(returnToAdd);
+        await SaveChangesAsync();
+    }
+    public async Task DeleteCatalogAsync(string Id)
+    {
+        await _catalogs.DeleteAsync();
     }
 }

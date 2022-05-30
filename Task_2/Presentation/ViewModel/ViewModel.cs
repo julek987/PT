@@ -43,6 +43,7 @@ public class ViewModel
     }
 
     //Catalog / INFO BOOK
+    /*
 
     private IEnumerable<ICatalogModel> catalogModel;
     public IEnumerable<ICatalogModel> CatalogModel
@@ -72,6 +73,7 @@ public class ViewModel
         CatalogModel = await Task.Run(() => model.Service.GetBooks());
     }
     */
+    /*
     public async Task TAddCatalog()
     {
         try
@@ -143,6 +145,7 @@ public class ViewModel
         ModelStates = await Task.Run(() => model.Service.GetStates());
     }
     */
+    /*
     public async Task TAddState()
     {
         try
@@ -252,5 +255,6 @@ public class ViewModel
         }
     }
     public event PropertyChangedEventHandler PropertyChanged;
+    */
     
 }

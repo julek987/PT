@@ -7,7 +7,7 @@ using Data.API;
 
 namespace Data.Implementation
 {
-    public class CatalogDTO : ICatalog
+    internal class CatalogDTO : ICatalog
     {
         public string Id { get; set; } = null!;
         public string Title { get; set; } = null!;

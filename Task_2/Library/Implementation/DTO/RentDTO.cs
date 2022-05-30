@@ -7,12 +7,19 @@ using Data.API;
 
 namespace Data.Implementation
 {
-    public class RentDTO : IRent
+    internal class RentDTO : IRent
     {
-        public string Id { get; set; } = null!;
-        public string StateId { get; set; } = null!;
+        public IState State
+        {
+            get; set;
+        }
 
-        public string UserId { get; set; } = null!;
+        public IUsers User
+        {
+            get; set;
+        }
+
+        public string Id { get; set; }
 
     }
 }
