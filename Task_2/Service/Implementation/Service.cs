@@ -18,11 +18,6 @@ namespace Service.Implementation
             throw new NotImplementedException();
         }
 
-        public Task ITAddEvent(IEvent e)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task ITAddState(IState s)
         {
             throw new NotImplementedException();
@@ -38,11 +33,6 @@ namespace Service.Implementation
             throw new NotImplementedException();
         }
 
-        public Task ITDeleteEvent(IEvent e)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task ITDeleteState(IState s)
         {
             throw new NotImplementedException();
@@ -54,11 +44,6 @@ namespace Service.Implementation
         }
 
         public Task<IEnumerable<ICatalog>> ITGetAllCatalogs()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<IEvent>> ITGetAllEvents()
         {
             throw new NotImplementedException();
         }
@@ -89,11 +74,6 @@ namespace Service.Implementation
         }
 
         public Task ITUpdateCatalog(ICatalog c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task ITUpdateEvent(IEvent e)
         {
             throw new NotImplementedException();
         }

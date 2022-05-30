@@ -76,6 +76,57 @@ internal class DataContext : DbContext, IDataContext
     }
     public async Task DeleteCatalogAsync(string Id)
     {
-        await _catalogs.DeleteAsync();
+
+        CatalogDTO? entityToRemove = await _catalogs.FindAsync(Id);
+        if(entityToRemove != null)
+        {
+            _catalogs.Remove(entityToRemove);
+            await SaveChangesAsync();
+        }
+        
+    }
+        public async Task DeleteStateAsync(string Id)
+    {
+
+        StateDTO? entityToRemove = await _states.FindAsync(Id);
+        if(entityToRemove != null)
+        {
+            _states.Remove(entityToRemove);
+            await SaveChangesAsync();
+        }
+        
+    }
+        public async Task DeleteUserAsync(string Id)
+    {
+
+        UsersDTO? entityToRemove = await _users.FindAsync(Id);
+        if(entityToRemove != null)
+        {
+            _users.Remove(entityToRemove);
+            await SaveChangesAsync();
+        }
+        
+    }
+        public async Task DeleteRentAsync(string Id)
+    {
+
+        RentDTO? entityToRemove = await _rents.FindAsync(Id);
+        if(entityToRemove != null)
+        {
+            _rents.Remove(entityToRemove);
+            await SaveChangesAsync();
+        }
+        
+    }
+        public async Task DeleteReturnAsync(string Id)
+    {
+
+        ReturnDTO? entityToRemove = await _returns.FindAsync(Id);
+        if(entityToRemove != null)
+        {
+            _returns.Remove(entityToRemove);
+            await SaveChangesAsync();
+        }
+        
     }
 }

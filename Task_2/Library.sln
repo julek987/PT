@@ -7,17 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Library\Data.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{8E44D596-B757-4BC1-B608-C9A4A8706306}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{065FDDE3-6973-4F06-9F65-13AAF411B3E3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D065660-8B56-4367-B37F-D3B181657D22}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\notatki\checklist.txt = ..\..\notatki\checklist.txt
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{B468D3EF-C922-4508-AC4F-11283EF5F3A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{B468D3EF-C922-4508-AC4F-11283EF5F3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{FC40907D-2336-45F5-BC7B-FAF6265ECC68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{FC40907D-2336-45F5-BC7B-FAF6265ECC68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		{8E44D596-B757-4BC1-B608-C9A4A8706306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E44D596-B757-4BC1-B608-C9A4A8706306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E44D596-B757-4BC1-B608-C9A4A8706306}.Release|Any CPU.Build.0 = Release|Any CPU
-		{065FDDE3-6973-4F06-9F65-13AAF411B3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{065FDDE3-6973-4F06-9F65-13AAF411B3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{065FDDE3-6973-4F06-9F65-13AAF411B3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{065FDDE3-6973-4F06-9F65-13AAF411B3E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B468D3EF-C922-4508-AC4F-11283EF5F3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B468D3EF-C922-4508-AC4F-11283EF5F3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B468D3EF-C922-4508-AC4F-11283EF5F3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU

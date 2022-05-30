@@ -27,11 +27,6 @@ namespace Service.API;
     Task ITUpdateState(IState s);
     Task ITDeleteState(IState s);
 
-    //Event
-    Task<IEnumerable<IEvent>> ITGetAllEvents();
-    Task ITAddEvent(IEvent e);
-    Task ITUpdateEvent(IEvent e);
-    Task ITDeleteEvent(IEvent e);
 
 }
 /*
