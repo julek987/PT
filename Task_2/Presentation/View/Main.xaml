@@ -12,9 +12,10 @@
     </Window.DataContext>
     <Grid Margin="0,0,-105,0" Height="544" VerticalAlignment="Top" RenderTransformOrigin="0.301,0.574">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="51*"/>
-            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="184*"/>
         </Grid.ColumnDefinitions>
+        <ContentControl Content="{Binding ReturnViewModel}"/>
         <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="634" Grid.ColumnSpan="2"/>
 
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="77,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.687,3.508" Grid.Column="1"><Run Language="pl-pl" Text="VIEW THE TABLES"/></TextBlock>
@@ -22,7 +23,7 @@
         <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,88,450,301"  Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding BookId}"/>
                     <GridViewColumn Header="Title" Width="120" DisplayMemberBinding="{Binding Title}"/>
                     <GridViewColumn Header="Author" Width="120" DisplayMemberBinding="{Binding Author}"/>
                 </GridView>
@@ -39,13 +40,13 @@
             </ListView.RenderTransform>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding UserId}"/>
                     <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding name}"/>
                     <GridViewColumn Header="Surname" Width="120" DisplayMemberBinding="{Binding surname}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="121,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.687,3.508" Grid.ColumnSpan="2"><Run Language="pl-pl" Text="BOOKS INFO"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="121,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.687,3.508"><Run Language="pl-pl" Text="BOOKS INFO"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="257,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.687,3.508" Grid.Column="1"><Run Language="pl-pl" Text="USERS"/></TextBlock>
 
 

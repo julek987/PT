@@ -13,12 +13,12 @@
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="17" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="634"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="313,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="-0.933,0.579"><Run Language="pl-pl" Text="USERS"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="67,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding Path=ViewModel.SelectedUser.UserId}" />
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="67,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding UserId}" />
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="19,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="User"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="229,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Name"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="431,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="pl-pl" Text="Surname"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Center" Height="20" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Text="{Binding Path=ViewModel.SelectedUser.Name}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="489,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Text="{Binding Path=ViewModel.SelectedUser.Surname}" />
+        <TextBox HorizontalAlignment="Center" Height="20" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Text="{Binding Name}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="489,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Text="{Binding Surname}" />
         <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="19,85,0,0" VerticalAlignment="Top" Width="310"/>
         <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="333,85,0,0" VerticalAlignment="Top" Width="322" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>

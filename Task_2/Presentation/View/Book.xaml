@@ -5,16 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:viem="clr-namespace:Presentation.ViewModel"
              xmlns:local="clr-namespace:Presentation.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Height="195" Width="665">
     <UserControl.DataContext>
         <viem:BookViewModel/>
     </UserControl.DataContext>
-    <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,107,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="304,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run Language="pl-pl" Text="BOOK"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="12,174,0,0" VerticalAlignment="Top" Width="308"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="324,174,0,0" VerticalAlignment="Top" Width="324"  RenderTransformOrigin="0.5,0.5">
+    <Grid Margin="0,0,10,88">
+        <Rectangle HorizontalAlignment="Center" Height="17" Margin="0,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="309,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run Language="pl-pl" Text="BOOK"/></TextBlock>
+        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="16,86,0,0" VerticalAlignment="Top" Width="308"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="328,86,0,0" VerticalAlignment="Top" Width="324"  RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -24,9 +23,9 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding Path=ViewModel.SelectedBook.BookId}" />
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"><Run Language="pl-pl" Text="INFO"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="268,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Text="{Binding Path=ViewModel.SelectedBook.InfoId}" />
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="62,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding BookId}" />
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="14,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="224,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"><Run Language="pl-pl" Text="INFO"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="272,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Text="{Binding InfoId}" />
     </Grid>
 </UserControl>

@@ -2,8 +2,25 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Presentation"
-             StartupUri="MainWindow.xaml">
+             xmlns:view="clr-namespace:Presentation.View"
+             xmlns:viewmodels="clr-namespace:Presentation.ViewModel"
+             StartupUri="View/Main.xaml">
+
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewmodels:BookViewModel}">
+            <view:Book/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BookInfoViewModel}">
+            <view:BookInfo/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:RentViewModel}">
+            <view:Rent/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ReturnViewModel}">
+            <view:Return/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:UsersViewModel}">
+            <view:Users/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

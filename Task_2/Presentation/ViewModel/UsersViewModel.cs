@@ -7,7 +7,10 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Presentation.ViewModel 
 {
-    internal class UsersViewModel: ObservableObject
+    public class UsersViewModel: ObservableObject
     {
+        public string UserId { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 }

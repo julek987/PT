@@ -17,8 +17,8 @@
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"><Run Language="pl-pl" Text="INFO "/><Run Text="ID"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Title:"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Author"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="254,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Text="{Binding Path=ViewModel.SelectedInfo.Title}" />
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="475,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding Path=ViewModel.SelectedInfo.Author}" />
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="254,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Text="{Binding Title}" />
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="475,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding Author}" />
         <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,72,0,0" VerticalAlignment="Top" Width="310" />
         <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="323,72,0,0" VerticalAlignment="Top" Width="323"  RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
