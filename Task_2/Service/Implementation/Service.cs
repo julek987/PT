@@ -83,55 +83,14 @@ namespace Service.Implementation
 
         public async Task<IEnumerable<API.ICatalog>> GetAllCatalogs()
         {
-            //from data to presentation
-            //CatalogModel catalogModel = new CatalogModel(catalogModel.Id, catalogModel.Title, catalogModel.Author);
-            var catalogs = await _catalogs.GetAllAsync();
-            //return Service.Model.CatalogModel()
+            return dataContext.Catalogs.Select(c => new CatalogModel(c.Id, c.Title, c.Author)).ToList();
         }
-        /* chyba nie beda uzywane
-        public async Task<IEnumerable<API.IRent>> GetAllRents()
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-
-        public async  Task<IEnumerable<API.IReturn>> GetAllReturns()
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<API.IState>> GetAllStates()
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-        */
         public async Task<IEnumerable<API.IUsers>> GetAllUsers()
         {
-            // TO DO
-            throw new NotImplementedException();
+            return dataContext.Users.Select(u => new UsersModel(u.Id, u.FirstName, u.LastName)).ToList();
         }
 
         public async  Task<API.ICatalog> GetCatalog(string id)
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-
-        public async Task<API.IRent> GetRent(string id)
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-
-        public async Task<API.IReturn> GetReturn(string id)
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-
-        public async Task<API.IState> GetState(string id)
         {
             // TO DO
             throw new NotImplementedException();
@@ -143,23 +102,7 @@ namespace Service.Implementation
             throw new NotImplementedException();
         }
 
-        public async Task UpdateCatalog(API.ICatalog c)
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-
-        public async Task UpdateState(API.IState s)
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
-
-        public async Task UpdateUser(API.IUsers u)
-        {
-            // TO DO
-            throw new NotImplementedException();
-        }
+     
 
     }
 }

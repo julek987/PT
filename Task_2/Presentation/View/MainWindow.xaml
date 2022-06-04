@@ -6,77 +6,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="850" Width="655">
     <Grid Margin="0,0,0,-6">
-        
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,72,0,0" VerticalAlignment="Top" Width="310" Click="Button_Click"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="323,72,0,0" VerticalAlignment="Top" Width="323" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.021"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding Path=ViewModel.SelectedInfo.InfoId}" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"><Run Language="pl-pl" Text="INFO "/><Run Text="ID"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Title:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Author"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="254,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Text="{Binding Path=ViewModel.SelectedInfo.Title}" TextChanged="TextBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="475,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding Path=ViewModel.SelectedInfo.Author}" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="12,174,0,0" VerticalAlignment="Top" Width="308" Click="Button_Click"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="324,174,0,0" VerticalAlignment="Top" Width="324" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.021"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding Path=ViewModel.SelectedBook.BookId}" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"><Run Language="pl-pl" Text="INFO"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="268,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Text="{Binding Path=ViewModel.SelectedBook.InfoId}" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,294,0,0" VerticalAlignment="Top" Width="310" Click="Button_Click"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="324,294,0,0" VerticalAlignment="Top" Width="322" Click="Button_Click" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.021"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding Path=ViewModel.SelectedUser.UserId}" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="User"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="220,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Name"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="pl-pl" Text="Surname"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="268,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Text="{Binding Path=ViewModel.SelectedUser.Name}" TextChanged="TextBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="480,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Text="{Binding Path=ViewModel.SelectedUser.Surname}" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="290,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"><Run Language="pl-pl" Text="BOOK INFO"/></TextBlock>
-        <Rectangle HorizontalAlignment="Center" Height="16" Margin="0,4,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
-        <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,107,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
-        <Rectangle HorizontalAlignment="Left" Height="17" Margin="12,219,0,0" Stroke="Black" VerticalAlignment="Top" Width="634"/>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="304,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run Language="pl-pl" Text="BOOK"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="304,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="-0.933,0.579"><Run Language="pl-pl" Text="USERS"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,400,0,0" VerticalAlignment="Top" Width="636" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" Text="{Binding Path=ViewModel.SelectedRent.BookId}" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book "/><Run Text="ID"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="336,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"><Run Language="pl-pl" Text="User ID"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="388,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Text="{Binding Path=ViewModel.SelectedRent.UserId}" TextChanged="TextBox_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,332,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="307,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" RenderTransformOrigin="-1.005,0.508"><Run Language="pl-pl" Text="RENT"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,503,0,0" VerticalAlignment="Top" Width="636" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Text="{Binding Path=ViewModel.SelectedReturn.BookId}" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="316,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53"><Run Language="pl-pl" Text="User ID"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="369,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" Text="{Binding Path=ViewModel.SelectedReturn.UserId}" TextChanged="TextBox_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="17" Margin="12,435,0,0" Stroke="Black" VerticalAlignment="Top" Width="634"/>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="299,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" RenderTransformOrigin="0.687,3.508"><Run Language="pl-pl" Text="RETURN"/></TextBlock>
+
+
+
+
         <Rectangle HorizontalAlignment="Left" Height="17" Margin="12,537,0,0" Stroke="Black" VerticalAlignment="Top" Width="634"/>
+
+
         <TextBlock HorizontalAlignment="Center" Height="17" Margin="0,537,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.687,3.508"><Run Language="pl-pl" Text="VIEW THE TABLES"/></TextBlock>
         <Button Content="View" HorizontalAlignment="Left" Height="20" Margin="280,559,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
         <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="12,598,344,31" SelectionChanged="ListView_SelectionChanged">
@@ -100,6 +36,6 @@
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="112,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.687,3.508"><Run Language="pl-pl" Text="BOOKS INFO"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="475,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" RenderTransformOrigin="0.687,3.508"><Run Language="pl-pl" Text="USERS"/></TextBlock>
 
-    
+
     </Grid>
 </Window>

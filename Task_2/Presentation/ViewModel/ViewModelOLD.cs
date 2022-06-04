@@ -11,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Presentation;
 
-public class ViewModel 
+public class ViewModelOLD
 {
     private IModel model;
+    /*
     public ViewModel(IModel model)
     {
         
@@ -39,7 +40,7 @@ public class ViewModel
         Task.Run(() => RefreshUsers());
         Thread.Sleep(100);
         Task.Run(() => RefreshEvents());
-        */
+       
     }
 
     //Catalog / INFO BOOK
@@ -252,6 +253,6 @@ public class ViewModel
         }
     }
     public event PropertyChangedEventHandler PropertyChanged;
-    
+    */
     
 }
