@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Presentation.Model;
 using Service.API;
 using System.Threading.Tasks;
 
@@ -51,15 +52,16 @@ namespace Presentation.ViewModel
             }
             else
             {
-                await _catalog.Save();
+                //await _catalog.Save();
             }
         }
 
         [ICommand]
         private void NewCatalog()
         {
+            //CatalogModel confusion need supervising!
             _newCatalog = true;
-            _catalog = new BookModel(_book.Library);
+            _catalog = new CatalogModel(_catalog.Servicee, null, null, null);
             OnPropertyChanged(nameof(InfoId));
             OnPropertyChanged(nameof(Title));
             OnPropertyChanged(nameof(Author));
