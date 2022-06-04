@@ -1,15 +1,13 @@
-﻿using Data.API;
-using Data;
+﻿using Service.API;
 
-namespace Service.Implementation
+namespace Service.Model
 {
-    internal class Return : IReturn
+    internal class RentModel : IRent
     {
         public IState State { get; set; }
 
         public IUsers User { get; set; }
 
         public string Id { get; set; }
-
     }
 }

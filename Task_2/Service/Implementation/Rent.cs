@@ -1,5 +1,5 @@
-﻿using Data;
-using Data.API;
+﻿using Data.API;
+using Data;
 
 namespace Service.Implementation
 {

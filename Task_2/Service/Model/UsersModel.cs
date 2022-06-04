@@ -1,11 +1,10 @@
-﻿using Data;
-using Data.API;
+﻿using Service.API;
 
-namespace Service.Implementation
+namespace Service.Model
 {
-    internal class Users : IUsers
+    internal class UsersModel : IUsers
     {
-        public Users(string id, string firstName, string lastName)
+        public UsersModel(string id, string firstName, string lastName)
         {
             Id = id;
             FirstName = firstName;

@@ -3,37 +3,37 @@
     {
 
     //Catalog
-    Task<ICatalog> IGetCatalog(string id);
-    Task<IEnumerable<ICatalog>> IGetAllCatalogs();
-    Task IAddCatalog(ICatalog c);
-    Task IUpdateCatalog(ICatalog c);
-    Task IDeleteCatalog(string id);
+    Task<ICatalog> GetCatalog(string id);
+    Task<IEnumerable<ICatalog>> GetAllCatalogs();
+    Task AddCatalog(ICatalog c);
+    Task UpdateCatalog(ICatalog c);
+    Task DeleteCatalog(string id);
 
     //User
-    Task<IUsers> IGetUser(string id);
-    Task<IEnumerable<IUsers>> IGetAllUsers();
-    Task IAddUser(IUsers u);
-    Task IUpdateUser(IUsers u);
-    Task IDeleteUser(string id);
+    Task<IUsers> GetUser(string id);
+    Task<IEnumerable<IUsers>> GetAllUsers();
+    Task AddUser(IUsers u);
+    Task UpdateUser(IUsers u);
+    Task DeleteUser(string id);
 
     //State
-    Task<IState> IGetState(string id);
-    Task<IEnumerable<IState>> IGetAllStates();
-    Task IAddState(IState s);
-    Task IUpdateState(IState s);
-    Task IDeleteState(string id);
+    Task<IState> GetState(string id);
+    Task<IEnumerable<IState>> GetAllStates();
+    Task AddState(IState s);
+    Task UpdateState(IState s);
+    Task DeleteState(string id);
 
     //Rent
-    Task <IRent> IGetRent(string id);
-    Task<IEnumerable<IRent>> IGetAllRents();
-    Task IAddRent(IRent r);
-    Task IDeleteRent(string id);
+    Task <IRent> GetRent(string id);
+    Task<IEnumerable<IRent>> GetAllRents();
+    Task AddRent(IRent r);
+    Task DeleteRent(string id);
 
     //Return
-    Task<IReturn> IGetReturn(string id);
-    Task<IEnumerable<IReturn>> IGetAllReturns();
-    Task IAddReturn(IReturn rn);
-    Task IDeleteReturn(string id);
+    Task<IReturn> GetReturn(string id);
+    Task<IEnumerable<IReturn>> GetAllReturns();
+    Task AddReturn(IReturn rn);
+    Task DeleteReturn(string id);
 
 
 }
