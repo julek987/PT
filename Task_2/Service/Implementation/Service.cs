@@ -83,7 +83,7 @@ namespace Service.Implementation
 
         public async Task<IEnumerable<API.ICatalog>> GetAllCatalogs()
         {
-            return dataContext.Catalogs.Select(c => new CatalogModel(c.Id, c.Title, c.Author)).ToList();
+            return dataContext.Catalogs.Select(c => new CatalogModel(c.Servicee, c.Id, c.Title, c.Author)).ToList();
         }
         public async Task<IEnumerable<API.IUsers>> GetAllUsers()
         {
@@ -102,7 +102,6 @@ namespace Service.Implementation
             throw new NotImplementedException();
         }
 
-     
 
     }
 }

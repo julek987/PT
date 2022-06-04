@@ -9,7 +9,15 @@ namespace Presentation.ViewModel
 {
     public partial class RentViewModel : ObservableObject
     {
-        public string BookId { get; set; }
-        public string UserId { get; set; }
+        private Service.API.IRent _rent;
+        public RentViewModel()
+        {
+        }
+        public RentViewModel(Service.API.IRent rent)
+        {
+            _rent = rent;
+        }
+        Service.API.IUsers User => _rent.User;
+        Service.API.IState State => _rent.State;
     }
 }

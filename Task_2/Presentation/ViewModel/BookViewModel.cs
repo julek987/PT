@@ -9,8 +9,19 @@ namespace Presentation.ViewModel
 {
     public partial class BookViewModel : ObservableObject
     {
-        public string BookId { get; set; }
-        public string InfoId { get; set; }   
+
+        private Service.API.IState _state;
+
+        public BookViewModel()
+        {
+        }
+
+        public BookViewModel(Service.API.IState state)
+        {
+            _state = state;
+        }
+        public string BookId => _state.Id;
+        public Service.API.ICatalog Catalog => _state.Catalog;
 
     }
 }

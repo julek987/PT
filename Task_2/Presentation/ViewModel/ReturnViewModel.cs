@@ -9,7 +9,16 @@ namespace Presentation.ViewModel
 {
     public class ReturnViewModel : ObservableObject
     {
-        public string BookId { get; set; }
-        public string UserId { get; set; }
+        private Service.API.IReturn _return;
+        public ReturnViewModel()
+        {
+        }
+        public ReturnViewModel(Service.API.IReturn @return)
+        {
+            _return = @return;
+        }
+
+        Service.API.IUsers User => _return.User;
+        Service.API.IState State => _return.State;
     }
 }
