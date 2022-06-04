@@ -10,17 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Presentation
+namespace Presentation.View
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for Main.xaml
+    /// </summary>
+    public partial class Main : Window
     {
-        public MainWindow()
+        public Main()
         {
             InitializeComponent();
         }
-
     }
 }

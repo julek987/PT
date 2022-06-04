@@ -2,7 +2,7 @@
 
 namespace Presentation.ViewModel
 {
-    internal partial class BookInfoViewModel : ObservableObject
+    public partial class BookInfoViewModel : ObservableObject
     {
         public string InfoId { get; set; }
     }
