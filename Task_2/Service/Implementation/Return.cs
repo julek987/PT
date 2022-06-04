@@ -3,11 +3,11 @@ using Data.API;
 
 namespace Service.Implementation
 {
-    internal class Rent : IRent
+    internal class Return : IReturn
     {
-        public IState State{ get; set;}
+        public IState State { get; set; }
 
-        public IUsers User{ get; set;}
+        public IUsers User { get; set; }
 
         public string Id { get; set; }
 

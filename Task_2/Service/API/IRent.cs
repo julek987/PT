@@ -2,15 +2,8 @@
 
 public interface IRent 
 {
-    public IState State
-    {
-        get; 
-    }
+    public IState State{ get; }
 
-    public IUsers User
-    {
-        get;
-    }
-
+    public IUsers User{ get;}
     string Id { get; }
 }

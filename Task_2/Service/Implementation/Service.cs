@@ -20,13 +20,23 @@ namespace Service.Implementation
             await dataContext.AddCatalogAsync(new Catalog(c.Id, c.Title, c.Author));
         }
 
+        public async Task IAddState(API.IState s)
+        {
+            // TO DO
+        }
+
+        public async Task IAddUser(API.IUsers u)
+        {
+            await dataContext.AddUserAsync(new Users(u.Id, u.FirstName, u.LastName));
+        }
+
         public async Task IAddRent(API.IRent r)
         {
             await dataContext.AddRentAsync(new Rent()
             {
                 //TO DO
                 Id = r.Id,
-                //State = dataContext.FindAsync(r.State.Id),
+                State = dataContext.States.Find(r.Id)
                 //User = dataContext.User
 
             }) ;
@@ -35,16 +45,6 @@ namespace Service.Implementation
         public async Task IAddReturn(API.IReturn rn)
         {
                // TO DO
-        }
-
-        public async Task IAddState(API.IState s)
-        {
-               // TO DO
-        }
-
-        public async Task IAddUser(API.IUsers u)
-        {
-            await dataContext.AddUserAsync(new Users(u.Id, u.FirstName, u.LastName));
         }
 
         public async Task IDeleteCatalog(string id)
