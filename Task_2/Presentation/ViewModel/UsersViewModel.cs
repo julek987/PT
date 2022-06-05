@@ -7,7 +7,7 @@ using Service.API;
 
 namespace Presentation.ViewModel 
 {
-    public class UsersViewModel: ObservableObject
+    public partial class UsersViewModel: ObservableObject
     {
         private IUsers _user;
         public UsersViewModel()
@@ -48,5 +48,6 @@ namespace Presentation.ViewModel
         {
             await _user.DeleteAsync();
         }
+
     }
 }

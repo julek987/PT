@@ -8,7 +8,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Presentation.ViewModel
 {
-    public class ReturnViewModel : ObservableObject
+    public partial class ReturnViewModel : ObservableObject
     {
         private Service.API.IReturn _return;
         public ReturnViewModel()
