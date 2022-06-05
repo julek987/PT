@@ -87,7 +87,7 @@ namespace Service.Implementation
         }
         public async Task<IEnumerable<API.IUsers>> GetAllUsers()
         {
-            return dataContext.Users.Select(u => new UsersModel(u.Id, u.FirstName, u.LastName)).ToList();
+            return dataContext.Users.Select(u => new UsersModel(this,u.Id, u.FirstName, u.LastName)).ToList();
         }
 
         public async  Task<API.ICatalog> GetCatalog(string id)

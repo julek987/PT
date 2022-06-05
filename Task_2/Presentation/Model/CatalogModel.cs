@@ -9,7 +9,7 @@ namespace Presentation.Model
 {
     internal class CatalogModel : Service.API.ICatalog
     {
-        public CatalogModel(IService service, string id, string title, string author)
+        public CatalogModel(string id, string title, string author)
         {
             Title = title;
             Author = author;
