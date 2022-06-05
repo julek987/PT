@@ -1,24 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Presentation.Model;
+using Service.API;
 
 namespace Presentation.ViewModel 
 {
     public class UsersViewModel: ObservableObject
     {
-        private Service.API.IUsers _user;
+        private IUsers _user;
         public UsersViewModel()
         {
         }
-        public UsersViewModel(Service.API.IUsers user)
+        public UsersViewModel(IUsers user)
         {
             _user = user;
         }
-        public string UserId { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public string UserId { 
+            get => _user.Id;
+            set
+            {
+                _user.Id = value;
+                OnPropertyChanged();
+            } }
+        public string Name { 
+            get => _user.FirstName;
+            set
+            {
+                _user.FirstName = value;
+                OnPropertyChanged();
+            } }
+        public string Surname { 
+            get => _user.LastName;
+            set
+            {
+                _user.LastName = value;
+                OnPropertyChanged();
+            } }
+        [ICommand]
+        private async Task AddUser()
+        {
+            await _user.AddAsync();
+        }
+        [ICommand]
+        private async Task DeleteUser()
+        {
+            await _user.DeleteAsync();
+        }
     }
 }
