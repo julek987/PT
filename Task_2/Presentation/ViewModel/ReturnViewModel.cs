@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Presentation.ViewModel
@@ -36,6 +37,12 @@ namespace Presentation.ViewModel
                 _return.StateId = value;
                 OnPropertyChanged();
             }
+        }
+
+        [ICommand]
+        private async Task AddReturn()
+        {
+            await _return.AddAsync();
         }
     }
 }

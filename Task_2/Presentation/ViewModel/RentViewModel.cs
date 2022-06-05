@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Service.API;
 
-namespace Presentation.ViewModel 
+namespace Presentation.ViewModel
 {
     public partial class RentViewModel : ObservableObject
     {
@@ -18,13 +19,13 @@ namespace Presentation.ViewModel
         {
             _rent = rent;
         }
-        
+
         public string UserId
         {
             get { return _rent.UserId; }
-            set 
-            { 
-                _rent.UserId = value; 
+            set
+            {
+                _rent.UserId = value;
                 OnPropertyChanged();
             }
         }
@@ -38,5 +39,13 @@ namespace Presentation.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        [ICommand]
+        private async Task AddRent()
+        {
+            await _rent.AddAsync();
+        }
+
+
     }
 }
