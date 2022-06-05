@@ -4,10 +4,16 @@ namespace Service.Model
 {
     internal class RentModel : IRent
     {
-        public IState State { get; set; }
+        public string StateId { get; set; }
 
-        public IUsers User { get; set; }
+        public string UserId { get; set; }
 
         public string Id { get; set; }
+
+        public IService Servicee { get; }
+        public async Task AddAsync()
+        {
+            await Servicee.AddRent(this);
+        }
     }
 }

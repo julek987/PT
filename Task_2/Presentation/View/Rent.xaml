@@ -12,11 +12,11 @@
     <Grid Margin="0,0,0,10">
         <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="307,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" RenderTransformOrigin="-1.005,0.508"><Run Language="pl-pl" Text="RENT"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="58,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" Text="{Binding BookId}" />
+        <TextBox HorizontalAlignment="Left" Text="{Binding StateId}" Height="20" Margin="58,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" />
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book "/><Run Text="ID"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="336,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"><Run Language="pl-pl" Text="User ID"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="388,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Text="{Binding UserId}" />
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,78,0,0" VerticalAlignment="Top" Width="636" />
+        <TextBox HorizontalAlignment="Left" Text="{Binding UserId}" Height="20" Margin="388,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" />
+        <Button Content="Add" HorizontalAlignment="Left" Command="{Binding AddRentCommand}" Height="20" Margin="10,78,0,0" VerticalAlignment="Top" Width="636" />
 
     </Grid>
 </UserControl>

@@ -4,20 +4,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Service.API;
 
-namespace Presentation.ViewModel 
+namespace Presentation.ViewModel
 {
     public partial class RentViewModel : ObservableObject
     {
-        private Service.API.IRent _rent;
+        private IRent _rent;
         public RentViewModel()
         {
         }
-        public RentViewModel(Service.API.IRent rent)
+        public RentViewModel(IRent rent)
         {
             _rent = rent;
         }
-        Service.API.IUsers User => _rent.User;
-        Service.API.IState State => _rent.State;
+
+        public string UserId
+        {
+            get { return _rent.UserId; }
+            set
+            {
+                _rent.UserId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string StateId
+        {
+            get { return _rent.StateId; }
+            set
+            {
+                _rent.StateId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [ICommand]
+        private async Task AddRent()
+        {
+            await _rent.AddAsync();
+        }
+
+
     }
 }

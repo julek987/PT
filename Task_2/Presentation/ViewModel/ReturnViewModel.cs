@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Presentation.ViewModel 
+namespace Presentation.ViewModel
 {
     public class ReturnViewModel : ObservableObject
     {
@@ -18,7 +19,30 @@ namespace Presentation.ViewModel
             _return = @return;
         }
 
-        Service.API.IUsers User => _return.User;
-        Service.API.IState State => _return.State;
+        public string UserId
+        {
+            get { return _return.UserId; }
+            set
+            {
+                _return.UserId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string StateId
+        {
+            get { return _return.StateId; }
+            set
+            {
+                _return.StateId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [ICommand]
+        private async Task AddReturn()
+        {
+            await _return.AddAsync();
+        }
     }
 }

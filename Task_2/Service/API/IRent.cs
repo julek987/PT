@@ -2,8 +2,10 @@
 
 public interface IRent 
 {
-    public IState State{ get; }
+    string Id { get; set; }
+    public string StateId { get; set; }
+    public string UserId { get; set; }
 
-    public IUsers User{ get;}
-    string Id { get; }
+    Task AddAsync();
+
 }
