@@ -50,8 +50,8 @@ namespace Service.Implementation
             await dataContext.AddReturnAsync(new Return()
             {
                 Id = rn.Id,
-                State = dataContext.States.Where(s => s.Id == rn.State.Id).First(),
-                User = dataContext.Users.Where(u => u.Id == rn.User.Id).First()
+                State = dataContext.States.Where(s => s.Id == rn.StateId).First(),
+                User = dataContext.Users.Where(u => u.Id == rn.UserId).First()
 
             });
         }

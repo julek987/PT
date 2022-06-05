@@ -4,10 +4,17 @@ namespace Service.Model
 {
     internal class ReturnModel : IReturn
     {
-        public IState State { get; set; }
+        public string StateId { get; set; }
 
-        public IUsers User { get; set; }
+        public string UserId { get; set; }
 
         public string Id { get; set; }
+
+        public IService Servicee { get; }
+
+        public async Task AddAsync()
+        {
+            await Servicee.AddReturn(this);
+        }
     }
 }
