@@ -20,16 +20,6 @@
         <TextBox HorizontalAlignment="Left" Height="20" Margin="254,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Text="{Binding Title}" />
         <TextBox HorizontalAlignment="Left" Height="20" Margin="475,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding Author}" />
         <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,72,0,0" VerticalAlignment="Top" Width="310" />
-        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="323,72,0,0" VerticalAlignment="Top" Width="323"  RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.021"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-
+        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="323,72,0,0" VerticalAlignment="Top" Width="323"/>
     </Grid>
 </UserControl>

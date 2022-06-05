@@ -24,7 +24,7 @@ namespace Service.Implementation
             await dataContext.AddStateAsync(new State(
 
                 s.Id,
-                dataContext.Catalogs.Where(c => c.Id == s.Catalog.Id).First()
+                dataContext.Catalogs.Where(c => c.Id == s.CatalogId).First()
 
             ));
         }

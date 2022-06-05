@@ -52,6 +52,7 @@ namespace Presentation.ViewModel
             }
             else
             {
+                // TO DO
                 //await _catalog.Save();
             }
         }
@@ -59,12 +60,21 @@ namespace Presentation.ViewModel
         [ICommand]
         private void NewCatalog()
         {
+            //TO DO
             //CatalogModel confusion need supervising!
             _newCatalog = true;
             _catalog = new CatalogModel(_catalog.Servicee, null, null, null);
             OnPropertyChanged(nameof(InfoId));
             OnPropertyChanged(nameof(Title));
             OnPropertyChanged(nameof(Author));
+        }
+
+        [ICommand]
+        private async Task DeleteBook()
+        {
+
+            // ASK Kuba
+            //await _catalog.DeleteAsync();
         }
     }
 }

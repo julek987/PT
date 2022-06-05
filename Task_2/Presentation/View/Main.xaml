@@ -19,8 +19,7 @@
         <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="634" Grid.ColumnSpan="2"/>
 
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="77,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.687,3.508" Grid.Column="1"><Run Language="pl-pl" Text="VIEW THE TABLES"/></TextBlock>
-        <Button Content="View" HorizontalAlignment="Left" Height="20" Margin="83,43,0,0" VerticalAlignment="Top" Width="86"  Grid.Column="1"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,88,450,301"  Grid.ColumnSpan="2">
+        <ListView SelectedIndex="{Binding SelectedBook}" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,88,450,301"  Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding BookId}"/>
@@ -29,15 +28,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="123,88,129,304" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
-            <ListView.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.227"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ListView.RenderTransform>
+        <ListView SelectedIndex="{Binding SelectedUser}" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="123,88,129,304" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding UserId}"/>

@@ -14,6 +14,47 @@ namespace Presentation.ViewModel
         public RentViewModel RentViewModel { get; set; } = new RentViewModel();
         public ReturnViewModel ReturnViewModel { get; set; } = new ReturnViewModel();
         public UsersViewModel UsersViewModel { get; set; } = new UsersViewModel();
+
+        [ObservableProperty]
+        private MainViewModel _activeBook;
         
+        private int _selectedBook;
+
+
+        public int SelectedBook
+        {
+            get => _selectedBook;
+            set
+            {
+                _selectedBook = value;
+                OnPropertyChanged();
+                try
+                {
+                    _activeBook = new MainViewModel();
+                    OnPropertyChanged(nameof(ActiveBook));
+                }
+                catch (ArgumentOutOfRangeException) { }
+            }
+        }
+        [ObservableProperty]
+        private MainViewModel _activeUser;
+        private int _selectedUser;
+
+        public int SelectedUser
+        {
+            get => _selectedUser;
+            set
+            {
+                _selectedUser = value;
+                OnPropertyChanged();
+                try
+                {
+                    _activeUser = new MainViewModel();
+                    OnPropertyChanged(nameof(ActiveUser));
+                }
+                catch (ArgumentOutOfRangeException) { }
+            }
+        }
+
     }
 }
