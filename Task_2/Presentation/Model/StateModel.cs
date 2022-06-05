@@ -23,7 +23,7 @@ namespace Presentation.Model
         public IService Servicee { get; }
 
 
-        public async Task Create()
+        public async Task AddAsync()
         {
             await Servicee.AddState(this);
         }

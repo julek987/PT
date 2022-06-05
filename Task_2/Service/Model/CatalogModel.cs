@@ -2,7 +2,7 @@
 
 namespace Service.Model
 {
-    internal class CatalogModel : Data.API.ICatalog
+    internal class CatalogModel : ICatalog
     {
         public CatalogModel(string id, string title, string author)
         {
@@ -14,6 +14,13 @@ namespace Service.Model
         public string Id { get; }
         public string Title { get; set; }
         public string Author { get; set; }
+
+        public IService Servicee { get; }
+
+        public async Task Create()
+        {
+            await Servicee.AddCatalog(this);
+        }
 
     }
 

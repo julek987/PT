@@ -9,48 +9,44 @@ namespace Presentation.ViewModel
 {
     public partial class BookViewModel : ObservableObject
     {
-
-        private Service.API.IState _state;
-        [ObservableProperty]
-        private Service.API.ICatalog _catalog;
-
-        private bool _newState = false;
+        private IState _state;
 
         public BookViewModel()
         {
         }
 
-        public BookViewModel(Service.API.IState state)
+        public BookViewModel(IState state)
         {
             _state = state;
         }
-        public string BookId => _state.Id;
-        public string InfoId {
-            get => _state.CatalogId;
-            set { _state.CatalogId = value; OnPropertyChanged();} 
-        }
 
-        [ICommand]
-        private async Task Save()
+        public string Id
         {
-            if (_newState)
+            get { return _state.Id; }
+            set
             {
-                await _state.Create();
-                _newState = false;
+                _state.Id = value;
+                OnPropertyChanged();
             }
-            else
+        }
+        public string CatalogId
+        {
+            get { return _state.CatalogId; }
+            set
             {
-                // TO DO
-                //await _catalog.Save();
+                _state.CatalogId = value;
+                OnPropertyChanged();
             }
         }
         [ICommand]
-        private void NewState()
+        private async Task AddState()
         {
-            _newState = true;
-            _state = new StateModel(_state.Servicee);
-            OnPropertyChanged(nameof(BookId));
-            OnPropertyChanged(nameof(InfoId));
+            await _state.AddAsync();
+        }
+        [ICommand]
+        private async Task DeleteState()
+        {
+            await _state.DeleteAsync();
         }
 
     }

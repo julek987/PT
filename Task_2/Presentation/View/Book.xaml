@@ -12,20 +12,11 @@
     <Grid Margin="0,0,10,88">
         <Rectangle HorizontalAlignment="Center" Height="17" Margin="0,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="309,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run Language="pl-pl" Text="BOOK"/></TextBlock>
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="16,86,0,0" VerticalAlignment="Top" Width="308"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="328,86,0,0" VerticalAlignment="Top" Width="324"  RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.021"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="62,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Text="{Binding BookId}" />
+        <Button Content="Add" Command="{Binding AddStateCommand}" HorizontalAlignment="Left" Height="20" Margin="16,86,0,0" VerticalAlignment="Top" Width="308"/>
+        <Button Content="Delete" Command="{Binding DeleteStateCommand}" HorizontalAlignment="Left" Height="20" Margin="328,86,0,0" VerticalAlignment="Top" Width="324"  RenderTransformOrigin="0.5,0.5"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Id}" Height="20" Margin="62,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" />
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="14,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Book"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="224,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"><Run Language="pl-pl" Text="INFO"/><Run Text=" ID"/><Run Text=":"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="272,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Text="{Binding InfoId}" />
+        <TextBox HorizontalAlignment="Left" Text="{Binding CatalogId}" Height="20" Margin="272,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" />
     </Grid>
 </UserControl>

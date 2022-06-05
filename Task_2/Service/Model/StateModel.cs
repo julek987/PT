@@ -13,10 +13,22 @@ namespace Service.Model
             Available = true;
         }
 
-        public string CatalogId => catalog.Id;
+        public string CatalogId { get; set; }
         public string Id { get; set; }
 
         public bool Available { get; set; }
-        public ICatalog Catalog { get; set; }
+        public ICatalog Catalog { get; set; } //?
+
+        public IService Servicee { get; }
+
+        public async Task AddAsync()
+        {
+            await Servicee.AddState(this);
+        }
+
+        public async Task DeleteAsync()
+        {
+            await Servicee.DeleteState(this.Id);
+        }
     }
 }
