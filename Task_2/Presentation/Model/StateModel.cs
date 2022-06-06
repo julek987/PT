@@ -9,11 +9,12 @@ namespace Presentation.Model
 {
     public class StateModel : IState
     {
-        public StateModel(string stateId, string catalogId)
+        public StateModel(string stateId, string catalogId, IService servicee)
         {
             Id = stateId;
             CatalogId = catalogId;
             Available = true;
+            Servicee = servicee;
         }
 
         public string CatalogId { get; set; }

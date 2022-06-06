@@ -9,11 +9,12 @@ namespace Presentation.Model
 {
     public class RentModel : IRent
     {
-        public RentModel(string stateId, string userId)
+        public RentModel(string stateId, string userId, IService service)
         {
             Id = Guid.NewGuid().ToString();
             StateId = stateId;
             UserId = userId;
+            Servicee = service;
         }
         public string StateId { get; set;}
         public string UserId { get; set; }

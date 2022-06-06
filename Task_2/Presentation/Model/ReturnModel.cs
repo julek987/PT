@@ -9,11 +9,12 @@ namespace Presentation.Model
 {
     public class ReturnModel : IReturn
     {
-        public ReturnModel(string stateId, string userId)
+        public ReturnModel(string stateId, string userId, IService service)
         {
             Id = Guid.NewGuid().ToString();
             StateId = stateId;
             UserId = userId;
+            Servicee = service;
         }
 
         public string StateId { get; set; }

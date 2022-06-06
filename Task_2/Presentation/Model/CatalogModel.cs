@@ -9,11 +9,12 @@ namespace Presentation.Model
 {
     internal class CatalogModel : ICatalog
     {
-        public CatalogModel(string id, string title, string author)
+        public CatalogModel(string id, string title, string author, IService servicee)
         {
             Title = title;
             Author = author;
             Id = id;
+            Servicee = servicee;
         }
 
         public IService Servicee { get; }

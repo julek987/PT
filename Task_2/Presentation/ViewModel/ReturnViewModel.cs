@@ -5,15 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Presentation.Model;
 
 namespace Presentation.ViewModel
 {
     public partial class ReturnViewModel : ObservableObject
     {
         private Service.API.IReturn _return;
-        public ReturnViewModel()
-        {
-        }
         public ReturnViewModel(Service.API.IReturn @return)
         {
             _return = @return;
