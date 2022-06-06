@@ -8,9 +8,9 @@ internal class DataContext : DbContext, IDataContext
 
     private const string defaultConnectionString =
         //Julian
-        //@"Data Source=LAPTOP-0CCV3DTJ;Initial Catalog=Database_Task2_PT;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        @"Data Source=LAPTOP-0CCV3DTJ;Initial Catalog=Database_Task2_PT;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         //Magdos
-        @"Data Source = LAPTOP-K74FCUSP; Initial Catalog = PT_baza_task2; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //@"Data Source = LAPTOP-K74FCUSP; Initial Catalog = PT_baza_task2; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
     private readonly string _connectionString;
 
