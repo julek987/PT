@@ -43,38 +43,14 @@ namespace Presentation.ViewModel
         }
 
         [ICommand]
-        private async Task Save()
+        private async Task AddState()
         {
-            if (_newCatalog)
-            {
-                await _catalog.Create();
-                _newCatalog = false;
-            }
-            else
-            {
-                // TO DO
-                //await _catalog.Save();
-            }
+            await _catalog.AddAsync();
         }
-
         [ICommand]
-        private void NewCatalog()
+        private async Task DeleteState()
         {
-            //TO DO
-            //CatalogModel confusion need supervising!
-            _newCatalog = true;
-            _catalog = new CatalogModel(_catalog.Servicee, null, null, null);
-            OnPropertyChanged(nameof(InfoId));
-            OnPropertyChanged(nameof(Title));
-            OnPropertyChanged(nameof(Author));
-        }
-
-        [ICommand]
-        private async Task DeleteBook()
-        {
-
-            // ASK Kuba
-            //await _catalog.DeleteAsync();
+            await _catalog.DeleteAsync();
         }
     }
 }

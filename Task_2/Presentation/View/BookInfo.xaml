@@ -19,7 +19,7 @@
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="422,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"><Run Language="pl-pl" Text="Author"/><Run Text=":"/></TextBlock>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="254,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Text="{Binding Title}" />
         <TextBox HorizontalAlignment="Left" Height="20" Margin="475,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding Author}" />
-        <Button Content="Add" HorizontalAlignment="Left" Height="20" Margin="10,72,0,0" VerticalAlignment="Top" Width="310" />
-        <Button Content="Delete" HorizontalAlignment="Left" Height="20" Margin="323,72,0,0" VerticalAlignment="Top" Width="323"/>
+        <Button Content="Add" Command="{Binding AddCatalogCommand}" HorizontalAlignment="Left" Height="20" Margin="10,72,0,0" VerticalAlignment="Top" Width="310" />
+        <Button Content="Delete" Command="{Binding DeleteCatalogCommand}" HorizontalAlignment="Left" Height="20" Margin="323,72,0,0" VerticalAlignment="Top" Width="323"/>
     </Grid>
 </UserControl>

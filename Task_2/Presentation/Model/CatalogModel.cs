@@ -1,13 +1,13 @@
-﻿using Service.API;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Service.API;
 
 namespace Presentation.Model
 {
-    internal class CatalogModel : Service.API.ICatalog
+    internal class CatalogModel : ICatalog
     {
         public CatalogModel(string id, string title, string author)
         {
@@ -23,7 +23,7 @@ namespace Presentation.Model
 
         public string Id { get; set; }
 
-        public async Task Create()
+        public async Task AddAsync()
         {
             await Servicee.AddCatalog(this);
         }

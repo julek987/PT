@@ -17,9 +17,14 @@ namespace Service.Model
 
         public IService Servicee { get; }
 
-        public async Task Create()
+        public async Task AddAsync()
         {
             await Servicee.AddCatalog(this);
+        }
+
+        public async Task DeleteAsync()
+        {
+            await Servicee.DeleteCatalog(this.Id);
         }
 
     }

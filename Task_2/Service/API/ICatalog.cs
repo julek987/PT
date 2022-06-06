@@ -6,7 +6,7 @@ public interface ICatalog
     public string Author { get; set; }
     public string Id { get;}
 
-    public IService Servicee { get; }
-    Task Create();
+    Task AddAsync();
+    Task DeleteAsync();
 
 }
