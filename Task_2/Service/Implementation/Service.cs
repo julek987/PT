@@ -2,14 +2,17 @@
 using Data.API;
 using Data;
 using Service.Model;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("ServiceTests")]
 
 namespace Service.Implementation
 {
-    public class DataService : IService
+    internal class DataService : IService
     {
         private IDataContext dataContext;
 
-        internal  DataService(IDataContext dataContext)
+        internal DataService(IDataContext dataContext)
         {
             this.dataContext = dataContext;
         }
