@@ -1,6 +1,5 @@
 ﻿using Service.API;
 using Data.API;
-using Data;
 using Service.Model;
 using System.Runtime.CompilerServices;
 
@@ -86,7 +85,7 @@ namespace Service.Implementation
 
         public async Task<IEnumerable<API.ICatalog>> GetAllCatalogs()
         {
-            return dataContext.Catalogs.Select(c => new CatalogModel(c.Id, c.Title, c.Author)).ToList();
+            return dataContext.Catalogs.Select(c => new CatalogModel(c.Id, c.Title, c.Author, this)).ToList();
         }
         public async Task<IEnumerable<API.IUsers>> GetAllUsers()
         {

@@ -4,14 +4,15 @@ namespace Service.Model
 {
     internal class CatalogModel : ICatalog
     {
-        public CatalogModel(string id, string title, string author)
+        public CatalogModel(string id, string title, string author, IService servicee)
         {
             Id = id;
             Title = title;
             Author = author;
+            Servicee = servicee;
         }
 
-        public string Id { get; }
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
 

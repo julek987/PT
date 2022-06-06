@@ -10,12 +10,18 @@
     <Window.DataContext>
         <viem:MainViewModel/>
     </Window.DataContext>
-    <Grid Margin="0,0,-105,0" Height="544" VerticalAlignment="Top" RenderTransformOrigin="0.301,0.574">
+    <StackPanel>
+        <ContentControl Content="{Binding UsersViewModel}"></ContentControl>
+        <ContentControl Content="{Binding BookInfoViewModel}"></ContentControl>
+        <ContentControl Content="{Binding BookViewModel}"></ContentControl>
+        <ContentControl Content="{Binding ReturnViewModel}"></ContentControl>
+        <ContentControl Content="{Binding RentViewModel}"></ContentControl>
+        <!--<Grid Margin="0,0,-105,0" Height="544" VerticalAlignment="Top" RenderTransformOrigin="0.301,0.574">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>
             <ColumnDefinition Width="184*"/>
         </Grid.ColumnDefinitions>
-        <ContentControl Content="{Binding ReturnViewModel}"/>
+        
         <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="634" Grid.ColumnSpan="2"/>
 
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="77,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.687,3.508" Grid.Column="1"><Run Language="pl-pl" Text="VIEW THE TABLES"/></TextBlock>
@@ -41,5 +47,6 @@
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="257,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.687,3.508" Grid.Column="1"><Run Language="pl-pl" Text="USERS"/></TextBlock>
 
 
-    </Grid>
+    </Grid>-->
+    </StackPanel>
 </Window>

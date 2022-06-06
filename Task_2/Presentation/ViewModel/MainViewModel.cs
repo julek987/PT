@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Presentation.Model;
 using Service.API;
@@ -11,14 +7,16 @@ namespace Presentation.ViewModel
 {
     public partial class MainViewModel : ObservableObject
     {
-        public MainViewModel(IService service)
+        public MainViewModel()
         {
+            service = IService.Create();
             BookViewModel = new BookViewModel(new StateModel("", "", service));
             BookInfoViewModel = new BookInfoViewModel(new CatalogModel("", "", "", service));
             RentViewModel = new RentViewModel(new RentModel("", "", service));
             ReturnViewModel = new ReturnViewModel(new ReturnModel("", "", service));
             UsersViewModel = new UsersViewModel(new UsersModel(service, "", "", ""));
         }
+        private readonly IService service;
         public BookViewModel BookViewModel { get; set;}
         public BookInfoViewModel BookInfoViewModel { get; set;}
         public RentViewModel RentViewModel { get; set;}

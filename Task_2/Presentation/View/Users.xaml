@@ -7,9 +7,7 @@
              xmlns:viem="clr-namespace:Presentation.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="110" d:DesignWidth="670">
-    <UserControl.DataContext>
-        <viem:UsersViewModel/>
-    </UserControl.DataContext>
+
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="17" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="634"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="313,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" RenderTransformOrigin="-0.933,0.579"><Run Language="pl-pl" Text="USERS"/></TextBlock>

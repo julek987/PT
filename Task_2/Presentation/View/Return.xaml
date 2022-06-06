@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:Presentation.View"
              xmlns:viem="clr-namespace:Presentation.ViewModel"
              mc:Ignorable="d" Height="152" Width="669">
-    <UserControl.DataContext>
-        <viem:ReturnViewModel/>
-    </UserControl.DataContext>
     <Grid Margin="0,0,10,10">
         <Button Content="Add" HorizontalAlignment="Left" Command="{Binding AddRentCommand}" Height="20" Margin="10,95,0,0" VerticalAlignment="Top" Width="636" />
         <TextBox HorizontalAlignment="Left"  Text="{Binding StateId}" Height="20" Margin="58,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" />

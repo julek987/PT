@@ -6,9 +6,6 @@
              xmlns:viem="clr-namespace:Presentation.ViewModel"
              xmlns:local="clr-namespace:Presentation.View"
              mc:Ignorable="d" Height="128" Width="661">
-    <UserControl.DataContext>
-        <viem:RentViewModel/>
-    </UserControl.DataContext>
     <Grid Margin="0,0,0,10">
         <Rectangle HorizontalAlignment="Left" Height="17" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="636"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="307,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" RenderTransformOrigin="-1.005,0.508"><Run Language="pl-pl" Text="RENT"/></TextBlock>

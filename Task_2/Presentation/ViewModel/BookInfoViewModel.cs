@@ -20,7 +20,15 @@ namespace Presentation.ViewModel
         {
             _catalog = catalog;
         }
-        public string InfoId => _catalog.Id;
+        public string InfoId
+        {
+            get => _catalog.Id;
+            set
+            {
+                _catalog.Id = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string Title
         {

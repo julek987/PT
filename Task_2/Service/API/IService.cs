@@ -1,6 +1,10 @@
-﻿namespace Service.API;
+﻿using Service.Implementation;
+using Data.API;
+
+namespace Service.API;
     public interface IService
     {
+    public static IService Create() => new DataService(IDataContext.CreateContext());
 
     //Catalog
     //Task<ICatalog> GetCatalog(string id);
