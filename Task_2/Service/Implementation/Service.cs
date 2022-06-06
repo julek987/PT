@@ -51,10 +51,9 @@ namespace Service.Implementation
         {
             await dataContext.AddReturnAsync(new Return()
             {
+                State = (from state in dataContext.States where state.Id == rn.StateId select state).First(),
                 Id = rn.Id,
-                State = dataContext.States.Where(s => s.Id == rn.StateId).First(),
                 User = dataContext.Users.Where(u => u.Id == rn.UserId).First()
-
             });
         }
 
