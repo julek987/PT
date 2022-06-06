@@ -10,7 +10,7 @@ using Data.Implementation;
 //using NSubstitute.ReturnsExtensions;
 
 
-namespace ServiceTests
+namespace Tests.ServiceTests
 {
     public class ServiceImplementTests
     {

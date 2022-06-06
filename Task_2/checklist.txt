@@ -1,0 +1,16 @@
+# Task 2 Check list
+
+- [ ] text is in C# and use .NET
+- [ ] build succeeded
+- [ ] all UT are green
+- [ ] Object model representing process data (reuse it from Task1)
+- [ ] layers are clearly stated in the language terms
+- [ ] `Data` layer is implemented using external SQL database and should be defined using LINQ to SQL (ORM)
+- [ ] LINQ (method and query syntax) is used to fetch data from the database
+- [ ] `Presentation` - his layer must be implemented in accordance with the `Model-View-ViewModel` (`MVVM`) software pattern
+- [ ] `Presentation` - the Master-Detail pattern
+- [ ] `View Model` must be tested using 2 independent `Model` data generation methods
+- [ ] `View Model` is tested independently
+- [ ] `View Model` use dependency injection for testing purpose (additional framework is not required)
+- [ ] The data and controls must be bond together using the data binding mechanism
+- [ ] `View` - design the appropriate GUI using `XAML` language (it should be C# codeless)

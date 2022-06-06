@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace DataTests
+namespace Tests.DataTests
 {
     public class DataImplementTests
     {

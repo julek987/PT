@@ -7,8 +7,10 @@ internal class DataContext : DbContext, IDataContext
 {
 
     private const string defaultConnectionString =
-        @"Data Source=LAPTOP-0CCV3DTJ;Initial Catalog=Database_Task2_PT;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
+        //Julian
+        //@"Data Source=LAPTOP-0CCV3DTJ;Initial Catalog=Database_Task2_PT;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //Magdos
+        @"Data Source = LAPTOP-K74FCUSP; Initial Catalog = PT_baza_task2; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
     private readonly string _connectionString;
 
@@ -38,6 +40,11 @@ internal class DataContext : DbContext, IDataContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<StateDTO>().HasOne(state => (CatalogDTO)state.Catalog);
+        modelBuilder.Entity<ReturnDTO>().HasOne(@return => (StateDTO)@return.State);
+        modelBuilder.Entity<RentDTO>().HasOne(rent => (StateDTO)rent.State);
+        modelBuilder.Entity<ReturnDTO>().HasOne(@return => (UsersDTO)@return.User);
+        modelBuilder.Entity<RentDTO>().HasOne(rent => (UsersDTO)rent.User);
+
     }
 
     public async Task AddUserAsync(IUsers user)
