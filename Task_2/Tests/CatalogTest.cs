@@ -1,6 +1,6 @@
 ﻿using Data.API;
 
-namespace Tests.DataTests
+namespace TestProject1
 {
     internal class CatalogTest : ICatalog
     {
