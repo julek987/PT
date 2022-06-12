@@ -1,7 +1,6 @@
 ﻿using System;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Presentation.Model;
-using Service.API;
 
 namespace Presentation.ViewModel 
 {
@@ -9,14 +8,13 @@ namespace Presentation.ViewModel
     {
         public MainViewModel()
         {
-            service = IService.Create();
-            BookViewModel = new BookViewModel(new StateModel("", "", service));
-            BookInfoViewModel = new BookInfoViewModel(new CatalogModel("", "", "", service));
-            RentViewModel = new RentViewModel(new RentModel("", "", service));
-            ReturnViewModel = new ReturnViewModel(new ReturnModel("", "", service));
-            UsersViewModel = new UsersViewModel(new UsersModel(service, "", "", ""));
+            
+            BookViewModel = new BookViewModel(new StateModel("", ""));
+            BookInfoViewModel = new BookInfoViewModel(new CatalogModel("", "", ""));
+            RentViewModel = new RentViewModel(new RentModel("", ""));
+            ReturnViewModel = new ReturnViewModel(new ReturnModel("", ""));
+            UsersViewModel = new UsersViewModel(new UsersModel("", "", ""));
         }
-        private readonly IService service;
         public BookViewModel BookViewModel { get; set;}
         public BookInfoViewModel BookInfoViewModel { get; set;}
         public RentViewModel RentViewModel { get; set;}

@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Presentation.Model.ModelAPI;
+using Service.API;
 
 namespace Presentation.Model
 {
     public class ReturnModel : IReturnModel
     {
-        public ReturnModel(string stateId, string userId, IService service)
+        public ReturnModel(string stateId, string userId)
         {
             Id = Guid.NewGuid().ToString();
             StateId = stateId;
             UserId = userId;
-            Servicee = service;
+
+            Servicee = IService.Create();
         }
 
         public string StateId { get; set; }
@@ -21,7 +23,7 @@ namespace Presentation.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddReturn(this);
+            await Servicee.AddReturn(Id, StateId, UserId);
         }
     }
 }

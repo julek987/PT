@@ -1,16 +1,18 @@
 ﻿using System.Threading.Tasks;
 using Presentation.Model.ModelAPI;
+using Service.API;
 
 namespace Presentation.Model
 {
     public class StateModel : IStateModel
     {
-        public StateModel(string stateId, string catalogId, IService servicee)
+        public StateModel(string stateId, string catalogId)
         {
             Id = stateId;
             CatalogId = catalogId;
             Available = true;
-            Servicee = servicee;
+
+            Servicee = IService.Create();
         }
 
         public string CatalogId { get; set; }
@@ -22,12 +24,12 @@ namespace Presentation.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddState(this);
+            await Servicee.AddState(Id, CatalogId);
         }
 
         public async Task DeleteAsync()
         {
-            await Servicee.DeleteState(this.Id);
+            await Servicee.DeleteState(Id);
         }
     }
 }

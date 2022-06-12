@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Presentation.Model.ModelAPI;
+using Service.API;
 
 namespace Presentation.Model
 {
     public class RentModel : IRentModel
     {
-        public RentModel(string stateId, string userId, IService service)
+        public RentModel(string stateId, string userId)
         {
             Id = Guid.NewGuid().ToString();
             StateId = stateId;
             UserId = userId;
-            Servicee = service;
+
+            Servicee = IService.Create();
         }
         public string StateId { get; set;}
         public string UserId { get; set; }
@@ -21,7 +23,7 @@ namespace Presentation.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddRent(this);
+            await Servicee.AddRent(Id, StateId, UserId);
         }
 
     }

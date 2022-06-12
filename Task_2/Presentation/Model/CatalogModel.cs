@@ -1,16 +1,18 @@
 ﻿using System.Threading.Tasks;
 using Presentation.Model.ModelAPI;
+using Service.API;
 
 namespace Presentation.Model
 {
     internal class CatalogModel : ICatalogModel
     {
-        public CatalogModel(string id, string title, string author, IService servicee)
+        public CatalogModel(string id, string title, string author)
         {
             Title = title;
             Author = author;
             Id = id;
-            Servicee = servicee;
+
+            Servicee = IService.Create();
         }
 
         public IService Servicee { get; }
@@ -22,12 +24,12 @@ namespace Presentation.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddCatalog(this);
+            await Servicee.AddCatalog(Id, Title, Author);
         }
 
         public async Task DeleteAsync()
         {
-            await Servicee.DeleteCatalog(this.Id);
+            await Servicee.DeleteCatalog(Id);
         }
     }
 }

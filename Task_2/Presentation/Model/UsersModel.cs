@@ -1,15 +1,18 @@
 ﻿using System.Threading.Tasks;
 using Presentation.Model.ModelAPI;
+using Service.API;
 
 namespace Presentation.Model
 {
     public class UsersModel : IUsersModel
     {
-        public UsersModel(IService service, string firstName, string lastName, string id)
+        public UsersModel(string id, string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
             Id = id;
+
+            Servicee = IService.Create();
         }
 
         public IService Servicee { get; }
@@ -19,12 +22,12 @@ namespace Presentation.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddUser(this);
+            await Servicee.AddUser(Id, FirstName, LastName);
         }
 
         public async Task DeleteAsync()
         {
-            await Servicee.DeleteUser(this.Id);
+            await Servicee.DeleteUser(Id);
         }
 
 

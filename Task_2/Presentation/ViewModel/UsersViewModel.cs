@@ -2,18 +2,17 @@
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Presentation.Model;
-using Service.API;
+using Presentation.Model.ModelAPI;
 
 namespace Presentation.ViewModel 
 {
     public partial class UsersViewModel: ObservableObject
     {
-        private IUsers _user;
+        private IUsersModel _user;
         public UsersViewModel()
         {
         }
-        public UsersViewModel(IUsers user)
+        public UsersViewModel(IUsersModel user)
         {
             _user = user;
         }

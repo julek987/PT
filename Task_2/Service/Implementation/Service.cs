@@ -16,44 +16,44 @@ namespace Service.Implementation
             this.dataContext = dataContext;
         }
 
-        public async Task AddCatalog(API.ICatalog c)
+        public async Task AddCatalog(string Id, string Title, string Author)
         {
-            await dataContext.AddCatalogAsync(new Catalog(c.Id, c.Title, c.Author));
+            await dataContext.AddCatalogAsync(new Catalog(Id, Title, Author));
         }
 
-        public async Task AddState(API.IState s)
+        public async Task AddState(string StateId, string CatalogId)
         {
             await dataContext.AddStateAsync(new State(
 
-                s.Id,
-                dataContext.Catalogs.Where(c => c.Id == s.CatalogId).First()
+                StateId,
+                dataContext.Catalogs.Where(c => c.Id == CatalogId).First()
 
             ));
         }
 
-        public async Task AddUser(API.IUsers u)
+        public async Task AddUser(string Id, string FirstName, string LastName)
         {
-            await dataContext.AddUserAsync(new Users(u.Id, u.FirstName, u.LastName));
+            await dataContext.AddUserAsync(new Users(Id, FirstName, LastName));
         }
 
-        public async Task AddRent(API.IRent r)
+        public async Task AddRent(string Id, string StateId, string UserId)
         {
             await dataContext.AddRentAsync(new Rent()
             {
-                Id = r.Id,
-                State = dataContext.States.Where(s => s.Id == r.StateId).First(),
-                User = dataContext.Users.Where(u => u.Id == r.UserId).First() 
+                Id = Id,
+                State = dataContext.States.Where(s => s.Id == StateId).First(),
+                User = dataContext.Users.Where(u => u.Id == UserId).First() 
                 
             }) ;
         }
 
-        public async Task AddReturn(API.IReturn rn)
+        public async Task AddReturn(string Id, string StateId, string UserId)
         {
             await dataContext.AddReturnAsync(new Return()
             {
-                State = (from state in dataContext.States where state.Id == rn.StateId select state).First(),
-                Id = rn.Id,
-                User = dataContext.Users.Where(u => u.Id == rn.UserId).First()
+                State = (from state in dataContext.States where state.Id == StateId select state).First(),
+                Id = Id,
+                User = dataContext.Users.Where(u => u.Id == UserId).First()
             });
         }
 

@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Presentation.Model;
-using Service.API;
+using Presentation.Model.ModelAPI;
 using System.Threading.Tasks;
 
 namespace Presentation.ViewModel
@@ -9,14 +8,14 @@ namespace Presentation.ViewModel
     public partial class BookInfoViewModel : ObservableObject
     {
         [ObservableProperty]
-        private Service.API.ICatalog _catalog;
+        private ICatalogModel _catalog;
 
         private bool _newCatalog = false;
         public BookInfoViewModel()
         {
         }
 
-        public BookInfoViewModel(Service.API.ICatalog catalog)
+        public BookInfoViewModel(ICatalogModel catalog)
         {
             _catalog = catalog;
         }

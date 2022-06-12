@@ -20,12 +20,12 @@ namespace Service.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddCatalog(this);
+            await Servicee.AddCatalog(Id, Title, Author);
         }
 
         public async Task DeleteAsync()
         {
-            await Servicee.DeleteCatalog(this.Id);
+            await Servicee.DeleteCatalog(Id);
         }
 
     }

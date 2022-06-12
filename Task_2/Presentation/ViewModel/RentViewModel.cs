@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Service.API;
+using Presentation.Model.ModelAPI;
 
 namespace Presentation.ViewModel
 {
     public partial class RentViewModel : ObservableObject
     {
-        private IRent _rent;
+        private IRentModel _rent;
         public RentViewModel()
         {
         }
-        public RentViewModel(IRent rent)
+        public RentViewModel(IRentModel rent)
         {
             _rent = rent;
         }

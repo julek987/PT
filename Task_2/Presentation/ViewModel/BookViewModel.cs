@@ -2,20 +2,19 @@
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Presentation.Model;
-using Service.API;
+using Presentation.Model.ModelAPI;
 
 namespace Presentation.ViewModel
 {
     public partial class BookViewModel : ObservableObject
     {
-        private IState _state;
+        private IStateModel _state;
 
         public BookViewModel()
         {
         }
 
-        public BookViewModel(IState state)
+        public BookViewModel(IStateModel state)
         {
             _state = state;
         }

@@ -31,8 +31,8 @@ namespace ServiceTests
         [Fact]
         public async Task AddCatalog()
         {
-            Service.API.ICatalog cat = new CatalogModel("1", "Anna Karenina", "Lew Tolstoy", service);
-            await service.AddCatalog(cat);
+            //Service.API.ICatalog cat = new CatalogModel("1", "Anna Karenina", "Lew Tolstoy", service);
+            await service.AddCatalog("1", "Anna Karenina", "Lew Tolstoy");
             await dataContext.Received(1).AddCatalogAsync(Arg.Is<Data.API.ICatalog>(cat => cat.Id == "1"));
 
         }
@@ -50,8 +50,8 @@ namespace ServiceTests
         [Fact]
         public async Task DeleteCatalog()
         {
-            Service.API.ICatalog cat = new CatalogModel("1", "Anna Karenina", "Lew Tolstoy", service);
-            await service.AddCatalog(cat);
+            //Service.API.ICatalog cat = new CatalogModel("1", "Anna Karenina", "Lew Tolstoy", service);
+            await service.AddCatalog("1", "Anna Karenina", "Lew Tolstoy");
             await service.DeleteCatalog("1");
             await dataContext.Received(1).DeleteCatalogAsync("1");
 
