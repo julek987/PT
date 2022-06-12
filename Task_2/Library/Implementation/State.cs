@@ -12,10 +12,8 @@ internal class State : IState
         this.catalog = catalog;
         Available = true;
     }
-
     public string CatalogId => catalog.Id;
     public string Id { get; set; }
-
     public bool Available { get; set; }
     public ICatalog Catalog { get; set; }
 }

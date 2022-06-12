@@ -1,5 +1,4 @@
 ﻿namespace Data;
-
 public interface IUsers
 {
     string FirstName { get; set; }

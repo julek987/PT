@@ -9,5 +9,4 @@ internal class DataRepository : IDataRepository
         dataContext = new DataContext();
         dataFill.Fill(this);
     }
-
 }
