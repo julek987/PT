@@ -22,8 +22,8 @@ namespace ServiceTests
         [Fact]
         public async Task AddUser()
         {
-            IUsers user = new UsersModel(service, "Will", "Smith", "1");
-            await service.AddUser(user);
+            //IUsers user = new UsersModel("Will", "Smith", "1");
+            await service.AddUser("1", "Will", "Smith");
             await dataContext.Received(1).AddUserAsync(Arg.Is<Data.IUsers>(user => user.Id == "1")) ; 
 
         }
@@ -40,8 +40,8 @@ namespace ServiceTests
         [Fact]
         public async Task DeleteUser()
         {
-            IUsers user = new UsersModel(service, "Will", "Smith", "1");
-            await service.AddUser(user);
+            //IUsers user = new UsersModel(service, "Will", "Smith", "1");
+            await service.AddUser("Will", "Smith", "1");
             await service.DeleteUser("1");
             await dataContext.Received(1).DeleteUserAsync("1");
 

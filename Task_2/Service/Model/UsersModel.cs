@@ -18,12 +18,12 @@ namespace Service.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddUser(this);
+            await Servicee.AddUser(Id, FirstName, LastName);
         }
 
         public async Task DeleteAsync()
         {
-            await Servicee.DeleteUser(this.Id);
+            await Servicee.DeleteUser(Id);
         }
     }
 }

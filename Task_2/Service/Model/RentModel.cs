@@ -13,7 +13,7 @@ namespace Service.Model
         public IService Servicee { get; }
         public async Task AddAsync()
         {
-            await Servicee.AddRent(this);
+            await Servicee.AddRent(Id, StateId, UserId);
         }
     }
 }

@@ -1,6 +1,6 @@
 using Presentation.ViewModel;
-using Service.API;
 using NSubstitute;
+using Presentation.Model.ModelAPI;
 
 namespace PresentationTests
 {
@@ -12,18 +12,18 @@ namespace PresentationTests
 
         private readonly BookViewModel StateViewModel;
 
-        private readonly ICatalog Catalog;
+        private readonly ICatalogModel Catalog;
 
-        private readonly IUsers User;
+        private readonly IUsersModel User;
 
-        private readonly IState State;
+        private readonly IStateModel State;
         public TestPresentation()
         {
-            Catalog = Substitute.For<ICatalog>();
+            Catalog = Substitute.For<ICatalogModel>();
             CatalogViewModel = new BookInfoViewModel(Catalog);
-            User = Substitute.For<IUsers>();
+            User = Substitute.For<IUsersModel>();
             UsersViewModel = new UsersViewModel(User);
-            State = Substitute.For<IState>();
+            State = Substitute.For<IStateModel>();
             StateViewModel = new BookViewModel(State);
         }
 

@@ -23,7 +23,7 @@ namespace Service.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddState(this);
+            await Servicee.AddState(Id, CatalogId);
         }
 
         public async Task DeleteAsync()

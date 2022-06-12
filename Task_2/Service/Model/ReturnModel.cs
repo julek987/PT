@@ -14,7 +14,7 @@ namespace Service.Model
 
         public async Task AddAsync()
         {
-            await Servicee.AddReturn(this);
+            await Servicee.AddReturn(Id, StateId, UserId);
         }
     }
 }
