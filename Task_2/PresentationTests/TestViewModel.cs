@@ -4,7 +4,7 @@ using Presentation.Model.ModelAPI;
 
 namespace PresentationTests
 {
-    public class TestPresentation
+    public class TestViewModel
     {
         private readonly BookInfoViewModel CatalogViewModel;
 
@@ -17,7 +17,7 @@ namespace PresentationTests
         private readonly IUsersModel User;
 
         private readonly IStateModel State;
-        public TestPresentation()
+        public TestViewModel()
         {
             Catalog = Substitute.For<ICatalogModel>();
             CatalogViewModel = new BookInfoViewModel(Catalog);
