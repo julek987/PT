@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Service.API;
+﻿using System.Threading.Tasks;
+using Presentation.Model.ModelAPI;
 
 namespace Presentation.Model
 {
-    public class UsersModel : Service.API.IUsers
+    public class UsersModel : IUsersModel
     {
         public UsersModel(IService service, string firstName, string lastName, string id)
         {

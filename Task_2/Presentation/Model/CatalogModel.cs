@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Service.API;
+﻿using System.Threading.Tasks;
+using Presentation.Model.ModelAPI;
 
 namespace Presentation.Model
 {
-    internal class CatalogModel : ICatalog
+    internal class CatalogModel : ICatalogModel
     {
         public CatalogModel(string id, string title, string author, IService servicee)
         {

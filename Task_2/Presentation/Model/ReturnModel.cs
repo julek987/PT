@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Service.API;
+using Presentation.Model.ModelAPI;
 
 namespace Presentation.Model
 {
-    public class ReturnModel : IReturn
+    public class ReturnModel : IReturnModel
     {
         public ReturnModel(string stateId, string userId, IService service)
         {
