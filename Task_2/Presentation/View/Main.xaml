@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Presentation.View"
         xmlns:viem="clr-namespace:Presentation.ViewModel"
         mc:Ignorable="d"
-        Title="Main" Height="352" Width="672">
+        Title="Main" Height="600" Width="672">
     <Window.DataContext>
         <viem:MainViewModel/>
     </Window.DataContext>

@@ -22,7 +22,8 @@ namespace TestProject1
             const string Id = "1";
             CatalogTest catalog = new CatalogTest("Harry Potter", "J.K. Rowling", Id);
             await context.AddCatalogAsync(catalog);
-            ICatalog result = context.Catalogs.Where(c => c.Id == Id).First();
+            IEnumerable<ICatalog> results = context.Catalogs.Where(c => c.Id == Id);
+            ICatalog result = results.First();
             Assert.Equal("Harry Potter", result.Title);
             await context.DeleteCatalogAsync(Id);
         }
